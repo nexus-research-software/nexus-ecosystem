@@ -19,6 +19,14 @@ Applications do not import one another to reuse review behavior. Shared packages
 
 Foundry retains authority over its agent workflows. An AI connector transports model interactions; it does not gain authority to approve tools, access arbitrary files, or execute actions.
 
+### Optional Foundry orchestration
+
+TRACER, CLEAR, and SCOPE keep their standalone review paths. Foundry may coordinate longer workflows through the same versioned `nexus-review` interfaces used by those applications. The review package does not depend on Foundry; application-specific rules remain with each application, and orchestration remains with Foundry.
+
+Shared interfaces describe review requests, evidence-backed findings, proposed changes, human approvals, revision results, and reports. Preserve source revision identity, edit semantics, and provenance. Foundry integration must use its supported public API and qualified execution capabilities; no private runtime imports or implicit authority grants.
+
+Prepare these interfaces in Stage 6, deliver standalone CLEAR and SCOPE in Stage 7, and pilot TRACER review/approve/revise/re-review in Stage 9. Qualify CLEAR and SCOPE integration separately after demonstrating value. Enabling or disabling Foundry must preserve existing direct review capabilities, evidence, approval rules, and saved results. Backend selection through `nexus-ai` remains independent of orchestration. See the [staged roadmap](ROADMAP.md#foundry-integration-across-stages) for acceptance gates.
+
 ## Public and private boundary
 
 Application source, reusable libraries, generic deployment tooling, templates, synthetic examples, and local-model connectors belong in public repositories.

@@ -12,11 +12,45 @@ This public execution outline describes the intended migration. Stages are miles
 | 3 — Prove the first private adapter | Move provider-specific behavior behind the interface while preserving TRACER behavior | Side-by-side acceptance evidence and a rollback path |
 | 4 — Migrate every consumer | Integrate the shared provider contract across all existing application entry points | Capability parity for each consumer, including agent and background workflows |
 | 5 — Qualify installation | Provide a novice-friendly install, update, repair, and rollback path | Verified Linux, Windows, and macOS installation journeys |
-| 6 — Extract shared review behavior | Introduce a reusable review package without breaking document editing and evidence behavior | Stable package interfaces and passing existing review workflows |
-| 7 — Deliver CLEAR, then SCOPE | Build CLEAR with PDF in its first release; follow with SCOPE | Agreed document-review acceptance criteria, PDF extraction/OCR qualification, page evidence, and review outputs |
+| 6 — Extract shared review behavior | Introduce reusable review, findings, proposed-change, and approval interfaces for applications and future Foundry workflows | Versioned interfaces with no Foundry dependency; passing existing editing, evidence, and approval workflows |
+| 7 — Deliver CLEAR, then SCOPE | Build standalone applications on the shared review interfaces; CLEAR with PDF first, then SCOPE | Agreed review acceptance criteria, PDF extraction/OCR qualification, page evidence, and review outputs; installation and use without Foundry |
 | 8 — Prove another backend | Select and test an open-source model through a public connector | Reproducible model/runtime configuration and task-specific capability results |
-| 9 — Extend agentic review | Expose qualified review capabilities through existing execution authority | Approval-aware workflow checks; separate justification and qualification for any gateway |
+| 9 — Add optional Foundry workflows | Pilot supervised TRACER review and revision, then extend to CLEAR and SCOPE where demonstrated value justifies it | Preserved direct reviews, evidence, and approvals; measured quality, manual effort, latency, and model usage; separate qualification for any gateway |
 | 10 — Release and retire legacy paths | Publish qualified releases and remove replaced implementation only after acceptance | Release manifests, compatibility records, migration guidance, and retained rollback artifacts |
+
+## Foundry integration across stages
+
+Foundry is an optional coordinator for longer, multistep workflows. TRACER, CLEAR, and SCOPE retain their standalone review paths and domain rules. Applications and Foundry consume the same maintained `nexus-review` capabilities; they do not copy review logic or import another application's GUI. These are planned integrations, not completed capabilities.
+
+### Stage 6 — Prepare the shared interfaces
+
+- Define versioned inputs and results for review requests, findings with source evidence, proposed changes, approval decisions, revision results, and reports. Carry input revision identity and relevant run provenance so findings and approvals remain tied to the document reviewed.
+- Preserve existing edit anchors, tracked-change behavior, review dispositions, cancellation, and error reporting through qualified adapters.
+- Keep `nexus-review` independent of Foundry. Expose enough information for either a standalone application or a future coordinator to request human approval and apply only approved changes.
+- Validate the shared interfaces against existing direct workflows before adding orchestration.
+
+### Stage 7 — Deliver standalone CLEAR and SCOPE
+
+- Build both applications on the shared interfaces while retaining their own rules, settings, and user experiences.
+- Verify installation and normal reviews without Foundry on Linux, Windows, and macOS.
+- Keep CLEAR's first PDF release independent of Stage 9. Qualify extraction/OCR, page evidence, and review reports; arbitrary PDF rewriting is outside this initial commitment.
+- Follow with SCOPE after CLEAR's acceptance gates pass.
+
+### Stage 9 — Pilot, measure, and expand
+
+Prerequisites are qualified shared review behavior and Foundry's provider migration. Planning the interfaces earlier must not turn Foundry integration into a release dependency for Stage 7.
+
+1. Add `document.review` and `document.revise` through Foundry's supported public API and trusted execution boundaries, using `nexus-review`. Qualify any new API capabilities explicitly. Validate staged inputs, output schemas, approved changes, and artifact paths; retain Foundry's control of execution authority.
+2. Pilot TRACER on synthetic documents: review → propose revisions → obtain human approval → apply approved changes → re-review → export findings and revision evidence.
+3. Compare the pilot with TRACER's direct workflow using the same fixtures and a recorded provider/model configuration. Agree acceptance thresholds jointly for finding quality, evidence fidelity, manual effort, end-to-end latency, and model usage. Check interruption, resume, cancellation, and rollback.
+4. Extend to CLEAR where coordinating PDF extraction/OCR, related contract checks, and uncertain findings helps reviewers. Extend to SCOPE where coordinating checks of objectives, tasks, deliverables, and acceptance criteria improves the workflow. Qualify each application separately.
+5. Release these workflows as optional features only after acceptance. If a workflow does not demonstrate sufficient value, retain direct reviews and defer that integration.
+
+**Acceptance requirement:** enabling or disabling Foundry must preserve each application's existing direct review capabilities, evidence, approval rules, and saved results. Disabling integration must not silently discard an in-progress run; preserve its state and artifacts and make the status explicit. Model-generated findings may vary; assess them against agreed quality criteria rather than requiring identical text.
+
+Backend selection remains independent of orchestration. Generic AI interactions use the public `nexus-ai` contract; GenAI-specific integration remains private, and local-model connectors remain public. Foundry's execution authority is separate from model-provider selection. Any new host controls, remote gateway, or production Hermes execution requires its own justified scope and qualification.
+
+No additional repository is required solely for this integration. Keep reusable review behavior in `nexus-review`, orchestration in Foundry, and application-specific policy in each application.
 
 ## Decisions already made
 
@@ -27,6 +61,7 @@ This public execution outline describes the intended migration. Stages are miles
 - Support user-supplied personal API keys where required.
 - Keep local-model connectors public.
 - Build CLEAR first among the new applications, with PDF in its first release.
+- Keep Foundry optional for TRACER, CLEAR, and SCOPE; prepare shared interfaces in Stage 6 and pilot orchestration in Stage 9 without delaying CLEAR.
 - Select the first local model and hardware later.
 
 ## Decisions still required
