@@ -2,7 +2,7 @@
 
 This public execution outline describes the intended migration. Stages are milestone-based; dates will follow demonstrated readiness.
 
-**Current status:** the organization, connector access, and two documentation repositories are established. Stage 0 acceptance work and the rest of Stage 1 remain open. No application has been refactored or qualified by this setup.
+**Current status:** Stage 0 implementation has started. The organization and two foundation repositories are established; this catalog now provides [baseline tooling](BASELINE.md), synthetic CI checks, an initial [capability ledger](CAPABILITY_LEDGER.md), and [AI contract requirements](AI_CONTRACT_REQUIREMENTS.md). Application acceptance, source/wheel reconciliation, and the rest of Stage 1 remain open. No application has been refactored or release-qualified by this tooling.
 
 | Stage | Outcome | Exit evidence |
 | --- | --- | --- |

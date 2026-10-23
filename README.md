@@ -9,6 +9,7 @@ Modular tools for research, technical documents, and knowledge workflows.
 - **Using an application:** read [Getting started](docs/GETTING_STARTED.md). Keep using your existing installation during migration.
 - **Understanding the design:** read [Architecture](docs/ARCHITECTURE.md).
 - **Following development:** read the [staged roadmap](docs/ROADMAP.md).
+- **Establishing the baseline:** use the [baseline tools](docs/BASELINE.md) and [capability ledger](docs/CAPABILITY_LEDGER.md).
 - **Contributing:** read the [shared contribution guide](https://github.com/nexus-research-software/.github/blob/main/CONTRIBUTING.md).
 
 ## Application catalog
@@ -41,7 +42,7 @@ These are intended repository names. Entries without links have not yet been est
 | Additional providers | `nexus-provider-asksage` | Candidate future adapter; placement and implementation remain to be decided |
 | Optional service | `nexus-ai-gateway` | Consider only when centralized inference has a demonstrated need |
 
-Only the two linked repositories have been created as part of this foundation setup. Shared package extraction and application migration are not complete.
+The catalog now includes generic source-identity and test-evidence tooling with synthetic CI checks. Only the two linked repositories have been created as part of this foundation setup. Shared package extraction and application migration are not complete.
 
 ## Design commitments
 
