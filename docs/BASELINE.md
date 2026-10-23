@@ -46,6 +46,20 @@ JUnit summaries retain aggregate counts and the report hash, without copying tes
 
 CLI exit codes: `0` means a complete snapshot, equal comparison, or successful test process with passing cases; `1` means incomplete/different/unsuccessful evidence; `2` means invalid input or an operational error. A tool success does not close a roadmap stage.
 
+## Repair a baseline without changing its meaning
+
+Keep repairs in working copies and preserve the first failing report. Classify each failure using the current implementation, current contract tests, and active documentation:
+
+- A test double or extracted-function namespace may lag behind an existing application import or window method. Repair the fixture while preserving the original behavioral assertions and separate native GUI checks.
+- An older test may conflict with a later, deliberately retained capability. Document the governing behavior and test its safeguards. For example, retained partial results must remain incomplete, identify unreviewed work, and avoid exposing raw service errors; they must never be relabeled as a complete review.
+- An environment failure needs a corrected environment and a recorded rerun. Build a fresh environment from the lockfile with platform markers intact, and verify installed versions. A populated environment downgraded in place may contain stale package metadata.
+- A missing fixture dependency belongs in test support. A missing runtime dependency belongs in the smallest relevant runtime extra. Verify the built package in clean core-only and relevant-extra environments so an all-extras developer environment cannot conceal packaging defects.
+- A product defect needs an isolated fix and a focused regression before broader checks. Keep this separate from source extraction and repository moves.
+
+For source/wheel drift, compare runtime file sets and bytes, identify each behavior difference, restore the authoritative implementation into a reviewable source candidate, and verify public-contract compatibility. Build and install that candidate independently of the source checkout. Assign a new development or release version; do not replace an existing published artifact with different bytes under its old version. A reconciled candidate still needs consumer acceptance and native qualification before selection as a shared release.
+
+Record original and repaired test names when a contract test changes. Do not add overlapping test-run totals together, treat skips as passes, or turn known baseline failures into blanket exclusions. Keep detailed patches and evidence private until their publication boundaries are reviewed.
+
 ## Stage 0 completion criteria
 
 - Original archives remain preserved with verified identities.

@@ -2,7 +2,7 @@
 
 This public execution outline describes the intended migration. Stages are milestone-based; dates will follow demonstrated readiness.
 
-**Current status:** Stage 0 implementation has started. The organization and two foundation repositories are established; this catalog now provides [baseline tooling](BASELINE.md), synthetic CI checks, an initial [capability ledger](CAPABILITY_LEDGER.md), and [AI contract requirements](AI_CONTRACT_REQUIREMENTS.md). Application acceptance, source/wheel reconciliation, and the rest of Stage 1 remain open. No application has been refactored or release-qualified by this tooling.
+**Current status:** Stage 0 is in progress. The organization and two foundation repositories provide [baseline tooling](BASELINE.md), synthetic CI checks, an initial [capability ledger](CAPABILITY_LEDGER.md), and [AI contract requirements](AI_CONTRACT_REQUIREMENTS.md). Source identities are frozen, an initial group of stale TRACER test fixtures is repaired in a private working copy, and Content source/wheel drift is reconciled in an unpublished development candidate with focused regression and isolated-package checks. Remaining baseline failures, consumer acceptance, native qualification, application publication decisions, and the rest of Stage 1 remain open. These repairs do not constitute application extraction or release qualification.
 
 | Stage | Outcome | Exit evidence |
 | --- | --- | --- |
