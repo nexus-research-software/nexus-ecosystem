@@ -1,0 +1,4 @@
+[project]
+name = "synthetic-baseline-example"
+version = "0.0.0"
+description = "Fabricated metadata for baseline tooling demonstrations"
