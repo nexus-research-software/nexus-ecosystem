@@ -8,7 +8,9 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 from tools import nexus_baseline as baseline
 
@@ -38,6 +40,31 @@ class BaselineTests(unittest.TestCase):
         diff = baseline.compare(before, baseline.snapshot(self.config))
         self.assertFalse(diff["equal"])
         self.assertEqual(diff["changes"][0]["status"], "changed")
+
+    def test_path_and_descriptor_timestamp_precision_may_differ(self):
+        original = os.fstat
+        def descriptor_stat(fd):
+            value = original(fd)
+            return SimpleNamespace(st_dev=value.st_dev, st_ino=value.st_ino,
+                                   st_size=value.st_size, st_mtime_ns=value.st_mtime_ns + 37,
+                                   st_ctime_ns=value.st_ctime_ns + 37)
+        with patch.object(baseline.os, "fstat", side_effect=descriptor_stat):
+            result = baseline.file_identity(self.source / "module.py")
+        self.assertEqual(result["sha256"], hashlib.sha256((self.source / "module.py").read_bytes()).hexdigest())
+
+    def test_mutation_during_read_is_rejected(self):
+        original = os.fstat
+        target = self.source / "module.py"
+        calls = 0
+        def descriptor_stat(fd):
+            nonlocal calls
+            calls += 1
+            if calls == 2:
+                target.write_bytes(b"different synthetic contents")
+            return original(fd)
+        with patch.object(baseline.os, "fstat", side_effect=descriptor_stat):
+            with self.assertRaises(ValueError):
+                baseline.file_identity(target)
 
     def test_added_removed_files_and_sources_are_visible(self):
         before = baseline.snapshot(self.config)

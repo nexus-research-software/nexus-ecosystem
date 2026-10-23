@@ -60,11 +60,13 @@ def file_identity(path: Path) -> dict[str, Any]:
     current = path.lstat()
     if (not os.path.samestat(before, current)
             or not stat.S_ISREG(current.st_mode)
+            # Compare each API with itself: Windows path stat and descriptor
+            # stat can expose different timestamp precision on Python 3.12+.
             or (before.st_size, before.st_mtime_ns, before.st_ctime_ns)
-            != (after.st_size, after.st_mtime_ns, after.st_ctime_ns)
-            or (after.st_size, after.st_mtime_ns, after.st_ctime_ns)
             != (current.st_size, current.st_mtime_ns, current.st_ctime_ns)):
         raise ValueError(f"File changed during read: {path}")
+    if (opened.st_size, opened.st_mtime_ns, opened.st_ctime_ns) != (after.st_size, after.st_mtime_ns, after.st_ctime_ns):
+        raise ValueError(f"Open file changed during read: {path}")
     return {"bytes": after.st_size, "sha256": digest.hexdigest()}
 
 
