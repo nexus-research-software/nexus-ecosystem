@@ -33,7 +33,8 @@ P3a implements new generation-one source/snapshot/quote anchors in `nexus-conten
 and review requests, findings, coverage, proposed changes, approval records and
 JSON/HTML reports in `nexus-review`. Review depends on content; neither depends on
 Foundry or a private provider. The current review callback is deterministic in the
-example, and no AI adapter or revision execution/result implementation is claimed.
+base example. P3c adds the optional AI reviewer described below; revision
+execution/results remain an open consumer-specific gate.
 Approval records bind exact plans and fresh source bytes; the host still owns human
 authentication, decision capture, source locking and execution authority.
 
@@ -45,6 +46,18 @@ prevent hidden fallback or a false complete-review claim. `nexus-review` consume
 the same immutable snapshot boundary, labels evidence origin and rejects stale
 OCR reports/decisions. OCR runtime selection is separate from GenAI provider
 selection and does not require another application or Foundry.
+
+P3c adds optional `nexus_review.ai` on `nexus-ai==0.1.0.dev2`; base review still
+requires only `nexus-content`. The host explicitly chooses and qualifies a provider,
+model, configuration and exact output schema. Whole-page findings must resolve to
+exact quote occurrences. Shared execution retains coverage and prior findings;
+immutable AI receipts record usage, admitted budgets, errors and interruptions,
+including discarded responses. Unknown usage remains unknown and stops further
+dispatch by default. The report identity binds the selected backend and call ledger
+so earlier approvals cannot move to a new run. No hidden retry, fallback, provider
+probe, editing or execution authority is introduced. Compatible connectors stay
+independent; GenAI-specific code remains private. This API does not claim monetary
+quotas, durable in-flight recovery, cross-page reasoning or actual model quality.
 
 Prepare these interfaces in Stage 6, deliver standalone CLEAR and SCOPE in Stage 7, and pilot TRACER review/approve/revise/re-review in Stage 9. Qualify CLEAR and SCOPE integration separately after demonstrating value. Enabling or disabling Foundry must preserve existing direct review capabilities, evidence, approval rules, and saved results. Backend selection through `nexus-ai` remains independent of orchestration. See the [staged roadmap](ROADMAP.md#foundry-integration-across-stages) for acceptance gates.
 

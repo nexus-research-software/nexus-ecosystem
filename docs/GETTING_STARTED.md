@@ -23,6 +23,13 @@ They need no model or private package. Use fresh isolated environments and the
 exact shared revision recorded in the review repository. The new public content
 package does not replace the original Content/RC4 package in existing applications.
 
+The optional [AI review walkthrough](https://github.com/nexus-research-software/nexus-review/blob/main/docs/AI_REVIEW.md)
+now switches between fabricated providers while preserving exact page quotes, native/OCR
+origin, explicit qualification, budgets and partial results. It needs the pinned
+public AI contract but no private package or key. Base deterministic review remains
+available without AI installed. The recorded usage and errors support inspection;
+this is still a developer example, not a CLEAR installer or proof of model quality.
+
 If you already use a NEXUS application, continue using your existing installation during migration. Moving the public repositories is not an instruction to uninstall or replace a working application.
 
 ## Planned installation experience
@@ -54,7 +61,9 @@ A fresh environment and explicitly selected Tesseract executable/language model
 are required. OCR is never silently invoked; reports distinguish native and
 recognized text, retain gaps and label OCR as unverified transcription. Synthetic
 native checks pass, while representative document accuracy and joint acceptance
-remain open. CLEAR itself is not available as an application release.
+remain open. P3c now connects shared review to the public AI contract and retains
+usage even for discarded outputs. The next public build prepares a standalone
+CLEAR PDF workflow candidate. CLEAR itself is not available as an application release.
 
 PDF review does not imply arbitrary rewriting of a PDF's layout or content. Supported outputs will be stated in the release documentation.
 
