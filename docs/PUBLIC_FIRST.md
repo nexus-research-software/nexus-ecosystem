@@ -21,7 +21,7 @@ claims. Work can advance past a blocked item when its actual dependencies permit
 | P1 — complete | `nexus-ai`: developer path with separately installed synthetic providers, explicit selection, metadata-only discovery, strict receipts and schemas | [PR 4](https://github.com/nexus-research-software/nexus-ai/pull/4): clean shared/provider wheel installs, switching and removal checks pass in all nine CI environments | Synthetic walkthrough only; no real model or private service qualified |
 | P2 — offline implementation complete | [Public compatible connector](https://github.com/nexus-research-software/nexus-provider-openai-compatible): explicit configuration, injected transport tests, errors, cancellation, deadlines, bounded attempts, scoped qualification and model identity | Installable chat connector with 67 source/installed-wheel checks and 69 shared-contract regression checks; no hidden retries or service fallback | Actual HTTP/model/runtime/hardware, task quality, capacity and application qualification remain open; the implementation currently covers non-streaming text/schema chat only |
 | P3 — P3a/P3b/P3c implemented; remaining gates open | [nexus-content](https://github.com/nexus-research-software/nexus-content) and [nexus-review](https://github.com/nexus-research-software/nexus-review): content/provenance and review/findings/proposed-change/approval contracts | 86 content checks; 53 base-only and 100 combined review checks from source/installed wheels; native synthetic OCR, exact provenance, explicit gaps and optional AI receipts | Actual model/review and representative OCR quality, source publication/licensing, consumer parity and revision behavior remain open |
-| P4 — next synthetic candidate | CLEAR: standalone PDF review built on the shared interfaces | A synthetic end-to-end workflow and a separately qualified real public-backend workflow; page-grounded findings, explicit incomplete coverage and reports | Shared P3 interfaces support candidate work; release needs a qualified backend and joint review criteria; arbitrary PDF rewriting is outside the first release |
+| P4 — P4a implemented; P4b next | [CLEAR](https://github.com/nexus-research-software/nexus-clear): standalone PDF review built on shared interfaces | P4a desktop/CLI candidate, 45 base / 52 combined checks, exact quotes, incomplete coverage, explicit native OCR, saved reports and fabricated backend switching | P4b improves review usability and explicit OCR/provider setup; application release still needs useful checklist criteria, qualified real backend and native acceptance; arbitrary PDF rewriting stays outside the first release |
 | P5 | Installation and catalog: acquire, install, launch, update, repair and roll back selected applications | Novice journeys on Linux, Windows and macOS; pinned compatibility records and synthetic first-run checks | Test actual OS/CPU/package combinations; original Ecosystem Manager source publication remains gated |
 | P6 | Existing consumers and SCOPE: opt-in shared interfaces and backend selection, then SCOPE on accepted review components | Public routes retain domain behavior, evidence, saved results and approvals; SCOPE follows CLEAR acceptance | Publication decisions for extracted sources, consumer-specific parity, qualified backend; retain private/legacy routes until separately accepted |
 | P7 | Optional Foundry workflows: shared review/revision interfaces and a supervised public-backend pilot | Explicit approvals, artifact identity, interruption/resume and measured value against the direct workflow | Qualified review components and Foundry's public provider route; execution authority remains with Foundry |
@@ -41,6 +41,15 @@ model selection, qualification and joint review quality remain pending. Further
 P3 work qualifies reusable consumer behavior/revision results as source-publication
 decisions permit. Text-layer-only scans still report missing text; OCR is explicit
 and never silently selected.
+
+P4a is the first standalone CLEAR increment, not full P4 acceptance. It provides
+three narrow wording topics, an offline desktop window, a CLI, explicit local OCR,
+strict saved evidence and two fabricated AI examples. No legal-risk judgment or PDF
+edit is applied. The actual source bootstrap and native Tk/OCR smoke tests are distinct
+from novice usability, native installers and useful real-model review. P4b can improve
+PDF preview, reviewer disposition, checklist navigation and explicit provider/OCR
+setup without private access; joint quality and selected model/runtime/hardware gates
+remain necessary before application acceptance.
 
 Installation work can start alongside component development; end-to-end novice
 qualification requires a usable application. Consumer migration can proceed as
