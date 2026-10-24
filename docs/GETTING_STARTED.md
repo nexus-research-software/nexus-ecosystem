@@ -10,6 +10,11 @@ between two fabricated backends. It needs no API key or internal service. It is
 a development example, not TRACER, CLEAR, SCOPE, or a real LLM. Public development
 now follows the [public-first execution order](PUBLIC_FIRST.md).
 
+The [public compatible connector](https://github.com/nexus-research-software/nexus-provider-openai-compatible)
+also includes an offline example that exercises its actual HTTP mapping through
+fabricated responses. It is separately installable and needs no private package.
+It does not yet establish compatibility or review quality with an actual model.
+
 If you already use a NEXUS application, continue using your existing installation during migration. Moving the public repositories is not an instruction to uninstall or replace a working application.
 
 ## Planned installation experience

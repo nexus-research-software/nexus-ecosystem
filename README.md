@@ -10,6 +10,7 @@ Modular tools for research, technical documents, and knowledge workflows.
 - **Understanding the design:** read [Architecture](docs/ARCHITECTURE.md).
 - **Following development:** read the [staged roadmap](docs/ROADMAP.md) and [current status](docs/STATUS.md).
 - **Developing without a private service:** try the [separately installed synthetic backends](https://github.com/nexus-research-software/nexus-ai/blob/main/docs/PUBLIC_DEVELOPMENT.md).
+- **Building a public backend:** use the [compatible connector and offline demo](https://github.com/nexus-research-software/nexus-provider-openai-compatible). Actual model qualification remains pending.
 - **Establishing the baseline:** use the [baseline tools](docs/BASELINE.md) and [capability ledger](docs/CAPABILITY_LEDGER.md).
 - **Planning repository ownership:** use the [boundary-plan checker](docs/BOUNDARIES.md).
 - **Contributing:** read the [shared contribution guide](https://github.com/nexus-research-software/.github/blob/main/CONTRIBUTING.md).
@@ -40,11 +41,11 @@ These are intended repository names. Entries without links have not yet been est
 | Content | `nexus-content` | Read-only content extraction and provenance |
 | AI contracts | [nexus-ai](https://github.com/nexus-research-software/nexus-ai) | Provider-neutral requests, results, capabilities, and adapter interfaces |
 | Review | `nexus-review` | Shared review execution, findings, change plans, and reports |
-| Local and compatible providers | `nexus-provider-openai-compatible` | Public connector for qualified compatible endpoints |
+| Local and compatible providers | [nexus-provider-openai-compatible](https://github.com/nexus-research-software/nexus-provider-openai-compatible) | Experimental compatible chat connector with explicit scoped qualification; offline candidate |
 | Additional providers | `nexus-provider-asksage` | Candidate future adapter; placement and implementation remain to be decided |
 | Optional service | `nexus-ai-gateway` | Consider only when centralized inference has a demonstrated need |
 
-The catalog includes generic source-identity, test-evidence, and private boundary-plan tooling with synthetic CI checks. Three repositories are now established: this catalog, `.github`, and the experimental `nexus-ai` package. Application source extraction and consumer migration are not complete.
+The catalog includes generic source-identity, test-evidence, and private boundary-plan tooling with synthetic CI checks. Four repositories are now established: this catalog, `.github`, `nexus-ai`, and `nexus-provider-openai-compatible`. The connector has offline package evidence; no actual model or application workflow is qualified yet. Application source extraction and consumer migration are not complete.
 
 ## Design commitments
 
