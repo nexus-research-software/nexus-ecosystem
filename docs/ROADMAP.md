@@ -10,7 +10,7 @@ order without waiting for internal access. Source-publication decisions, model
 selection, and actual acceptance evidence still apply. See the detailed
 [public-first work sequence and gates](PUBLIC_FIRST.md).
 
-**Current focus: prepare public P4 CLEAR PDF workflow candidate.** Public P1/P2 and the P3a/P3b/P3c contract, OCR and optional AI review increments are implemented; Phase 8's actual model qualification remains open. Phase 3 has an offline candidate; acceptance remains open and its internal work is deferred. Stages 0 and 1 retain their acceptance/publication gates. Stage 2 has a public [nexus-ai prototype](https://github.com/nexus-research-software/nexus-ai), version `0.1.0.dev2`, with synchronous text/schema completion, explicit selection, capability and schema-qualification controls, bounded accounting, cancellation, safe error receipts, and lazy discovery. All 69 source and clean installed-wheel tests pass across Linux, Windows, and macOS with Python 3.11–3.13. Adapter failures retain normalized termination evidence as well as usage and call counts. A separate public synthetic adapter example exercises installation, explicit selection between two fabricated backends, and removal; it does not qualify a real model.
+**Current focus: public P4b CLEAR usability and acceptance preparation, following the P4a standalone candidate.** Public P1/P2 and the P3a/P3b/P3c contract, OCR and optional AI review increments are implemented; Phase 8's actual model qualification remains open. Phase 3 has an offline candidate; acceptance remains open and its internal work is deferred. Stages 0 and 1 retain their acceptance/publication gates. Stage 2 has a public [nexus-ai prototype](https://github.com/nexus-research-software/nexus-ai), version `0.1.0.dev2`, with synchronous text/schema completion, explicit selection, capability and schema-qualification controls, bounded accounting, cancellation, safe error receipts, and lazy discovery. All 69 source and clean installed-wheel tests pass across Linux, Windows, and macOS with Python 3.11–3.13. Adapter failures retain normalized termination evidence as well as usage and call counts. A separate public synthetic adapter example exercises installation, explicit selection between two fabricated backends, and removal; it does not qualify a real model.
 
 The new public [compatible chat connector](https://github.com/nexus-research-software/nexus-provider-openai-compatible)
 implements explicit immutable profiles, expiring instance-bound qualification,
@@ -41,14 +41,21 @@ retain usage and prior findings through interruption. Unknown usage remains unkn
 Strict AI reports bind backend/run receipts to change plans and approvals. The
 53 base-only and 100 combined source/installed-wheel tests pass in nine environments;
 69 AI and 67 connector regressions also pass. Actual review/model quality remains
-open. Next is a public P4 CLEAR PDF workflow candidate with fabricated scenarios,
-while consumer/revision qualification proceeds as publication decisions permit.
+open. P4a now adds [standalone CLEAR](https://github.com/nexus-research-software/nexus-clear),
+`0.1.0.dev0`: a desktop/CLI PDF wording-review candidate with 45 base / 52 combined
+application tests, exact page findings, explicit local OCR, saved evidence and two
+fabricated backend examples. The application composes the shared packages without
+copying parsers, transports or review loops. Its narrow starter checklist makes no
+legal-risk or contract-clearance claim. P4b next improves PDF preview, review
+controls and explicit OCR/provider setup. Joint criteria, real-model qualification,
+representative OCR and full native application acceptance remain open, while
+consumer/revision qualification proceeds as publication decisions permit.
 
 An opt-in TRACER compatibility candidate passes 43 focused synthetic checks, including retained findings after later failure, unfinished coverage, cancellation, and retry/repair accounting. Its patch and detailed evidence remain private. Existing application composition and the governed private transport remain unchanged. The bridge cannot replace enforced quota handling, and it does not establish live-provider or native-workflow parity.
 
 The separately installable private adapter candidate passes 242 offline source tests and the same 242 tests from a clean installed wheel on Linux/Python 3.12, without an application installation. Those checks include 192 retained runtime cases and 50 new adapter cases. Private code, configuration, diagnostic evidence and recovery bundles remain outside public repositories. **Deferred private gate:** internal import, internal/native/live qualification, and one opt-in consumer route remain required before changing private application defaults. They no longer block unrelated public implementation. See [status and recovery checkpoints](STATUS.md) for completed work and remaining gates.
 
-The catalog and organization foundations provide [baseline tooling](BASELINE.md), a [boundary-plan checker](BOUNDARIES.md), synthetic CI checks, a [capability ledger](CAPABILITY_LEDGER.md), and [AI contract requirements](AI_CONTRACT_REQUIREMENTS.md). Source baselines cover all supplied canonical projects. The repaired TRACER candidate passes its full Linux source suite; ATLAS, Ecosystem Manager, Cartographer, Repository Analyst, and Research Workbench pass their headless suites with skips retained. Foundry and Ledger retain failures requiring a display. The unpublished reconciled Content candidate matches RC4 test-case outcomes across five application consumers. A provisional private map accounts for all 4,133 included source files. Native/live-provider qualification, installation acceptance, application licensing and publication decisions, and detailed boundary review remain open. No application extraction or release qualification is claimed.
+The catalog and organization foundations provide [baseline tooling](BASELINE.md), a [boundary-plan checker](BOUNDARIES.md), synthetic CI checks, a [capability ledger](CAPABILITY_LEDGER.md), and [AI contract requirements](AI_CONTRACT_REQUIREMENTS.md). Source baselines cover all supplied canonical projects. The repaired TRACER candidate passes its full Linux source suite; ATLAS, Ecosystem Manager, Cartographer, Repository Analyst, and Research Workbench pass their headless suites with skips retained. Foundry and Ledger retain failures requiring a display. The unpublished reconciled Content candidate matches RC4 test-case outcomes across five application consumers. A provisional private map accounts for all 4,133 included source files. Native/live-provider qualification, installation acceptance, application licensing and publication decisions, and detailed boundary review remain open. No original-application extraction or release qualification is claimed; CLEAR is newly authored public candidate code.
 
 | Stage | Outcome | Exit evidence |
 | --- | --- | --- |
@@ -82,7 +89,7 @@ Foundry is an optional coordinator for longer, multistep workflows. TRACER, CLEA
 
 ### Stage 7 — Deliver standalone CLEAR and SCOPE
 
-- Build both applications on the shared interfaces while retaining their own rules, settings, and user experiences.
+- Build both applications on the shared interfaces while retaining their own rules, settings, and user experiences. P4a delivers the first CLEAR candidate; P4b prepares usable reviewer controls and acceptance evidence.
 - Verify installation and normal reviews without Foundry on Linux, Windows, and macOS.
 - Keep CLEAR's first PDF release independent of Stage 9. Qualify extraction/OCR, page evidence, and review reports; arbitrary PDF rewriting is outside this initial commitment.
 - Follow with SCOPE after CLEAR's acceptance gates pass.
@@ -118,7 +125,7 @@ No additional repository is required solely for this integration. Keep reusable 
 
 ## Decisions still required
 
-- Confirm application source licensing and third-party attribution before publication.
+- Confirm original application-source licensing and third-party attribution before source publication, and licensing before any package/application release.
 - Agree the detailed capability ledger and acceptance thresholds.
 - Assign package and application ownership between the two developers.
 - Qualify exact OS/CPU combinations and installation methods.

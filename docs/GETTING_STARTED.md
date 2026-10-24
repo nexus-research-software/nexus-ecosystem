@@ -2,7 +2,9 @@
 
 ## Current availability
 
-NEXUS is establishing its public repository foundations. This catalog does not yet provide application installers or an accepted application compatibility set; developer package walkthroughs are linked below.
+NEXUS now includes a [standalone CLEAR development candidate](https://github.com/nexus-research-software/nexus-clear). Clone only that repository and follow its pinned bootstrap instructions to try the desktop or CLI on fabricated PDFs. Python 3.11–3.13 and Git are required; the desktop additionally needs Tk and a graphical display. Base wording checks need no AI or private service.
+
+Qualified native application installers, update/repair/rollback journeys and an accepted application compatibility set remain pending. Package-level walkthroughs are linked below.
 
 Developers can use the [public AI walkthrough](https://github.com/nexus-research-software/nexus-ai/blob/main/docs/PUBLIC_DEVELOPMENT.md)
 to install the shared contract and an optional synthetic adapter, then switch
@@ -52,7 +54,9 @@ Some deployments require a separately distributed private adapter and an interna
 
 ## CLEAR and PDF
 
-CLEAR is the first planned new application. Its first release must support PDF review, including qualification for text, scanned, and mixed PDFs, page-based evidence, and review reports.
+CLEAR is the first new application. Its [P4a candidate](https://github.com/nexus-research-software/nexus-clear) provides a desktop window, CLI, three narrow wording topics, exact page quotes and new-folder JSON/HTML reports. Save and reopen returned results without inference; optionally verify the current PDF bytes. No PDF edits or legal-risk ratings are applied. Human review remains required even with zero findings.
+
+Its first accepted release still requires qualification for text, scanned and mixed PDFs, page-based evidence, useful checklist coverage and review quality.
 
 P3a establishes shared text-layer and review contracts. P3b adds an optional
 [local OCR walkthrough](https://github.com/nexus-research-software/nexus-content/blob/main/docs/OCR.md)
@@ -62,8 +66,11 @@ are required. OCR is never silently invoked; reports distinguish native and
 recognized text, retain gaps and label OCR as unverified transcription. Synthetic
 native checks pass, while representative document accuracy and joint acceptance
 remain open. P3c now connects shared review to the public AI contract and retains
-usage even for discarded outputs. The next public build prepares a standalone
-CLEAR PDF workflow candidate. CLEAR itself is not available as an application release.
+usage even for discarded outputs. P4a composes these packages in CLEAR, with optional
+explicit CLI OCR and two fabricated AI demonstrations. Real-provider configuration
+is currently a Python host boundary; the desktop runs offline wording checks.
+P4b will improve PDF preview, reviewer controls and explicit OCR/provider setup.
+CLEAR is available as a development candidate, not an accepted application release.
 
 PDF review does not imply arbitrary rewriting of a PDF's layout or content. Supported outputs will be stated in the release documentation.
 

@@ -1,7 +1,8 @@
 # Execution status — 2026-10-24
 
-**Current focus: public P4 CLEAR PDF workflow candidate.** Public P1/P2
-and the P3a/P3b/P3c content/review, native OCR and optional AI increments are implemented. Full P3, actual Phase 8 model
+**Current focus: public P4b CLEAR usability and acceptance preparation.** Public P1/P2
+and the P3a/P3b/P3c content/review, native OCR and optional AI increments are implemented.
+P4a adds the first standalone CLEAR PDF wording-review candidate. Full P3, actual Phase 8 model
 qualification and application acceptance remain open.
 The execution order now prioritizes every feasible public milestone before
 resuming internal private-repository work. Phase 3 remains at its implemented
@@ -14,18 +15,58 @@ separate public/private acceptance gates.
 | Phase | Current evidence | Remaining exit condition |
 | --- | --- | --- |
 | 0 — Baselines | Canonical source identities, capability inventory and baseline evidence captured | Native/live checks and joint acceptance of remaining baseline issues |
-| 1 — Repository boundaries | Six public repositories, ownership mapping, boundary tooling, and phase/status merge template | Original-source publication/licensing decisions and internal project import |
+| 1 — Repository boundaries | Seven public repositories, ownership mapping, boundary tooling, and phase/status merge template | Original-source publication/licensing decisions and internal project import |
 | 2 — AI contract | `nexus-ai 0.1.0.dev2`; 69 source and installed-wheel tests pass in nine CI environments; private TRACER bridge has 43 focused checks | Consumer acceptance before treating the interface as stable |
 | 3 — Private adapter | Deferred at the retained offline checkpoint: 242 source and 242 installed-wheel tests on Linux/Python 3.12; private handoff prepared | Internal/native/live qualification and application parity when private work resumes; no default switch |
 | 4 — Consumer migration | Consumer requirements and boundaries identified | Prove one opt-in route, then each remaining application entry point |
-| 5 — Installation | AI, compatible provider, content and review packages have cross-platform wheel checks; synthetic-provider selection/removal checks implemented | Novice application install/update/repair/rollback journeys |
+| 5 — Installation | AI, compatible provider, content, review and CLEAR packages have cross-platform wheel checks; synthetic-provider selection/removal and CLEAR developer-bootstrap checks implemented | Novice application install/update/repair/rollback journeys |
 | 6 — Shared review | P3a/P3b/P3c implemented: exact PDF/OCR evidence, review/approval contracts and optional AI review with receipts; 86 content checks, 53 base-only and 100 combined review checks from source/installed wheels in nine environments | Representative OCR and real-model review quality, original-source publication and consumer/editing parity; authenticated host workflows and revision results |
-| 7 — CLEAR, then SCOPE | CLEAR PDF requirement retained | Build and jointly accept standalone applications |
+| 7 — CLEAR, then SCOPE | P4a standalone CLEAR candidate: desktop/CLI, wording checklist, exact PDF evidence, explicit OCR and saved reports | P4b reviewer usability/provider setup; qualified real backend, useful checklist coverage and joint/native acceptance; SCOPE follows CLEAR |
 | 8 — Another backend | Public compatible chat connector implemented; 67 source/installed-wheel checks and 69 shared-contract regression checks; explicit profiles and scoped qualification | Actual HTTP/model/runtime/hardware, quality/capacity and application/native qualification; no real model qualified yet |
 | 9 — Foundry | Optional workflow plan recorded | Qualified shared review and consumer migration, then supervised pilot |
 | 10 — Releases | No application release or legacy retirement claimed | All release gates, migration guidance and retained rollback |
 
-## Public P3c AI review checkpoint
+## Public P4a standalone CLEAR checkpoint
+
+- [CLEAR PR 1](https://github.com/nexus-research-software/nexus-clear/pull/1)
+  introduces `nexus-clear 0.1.0.dev0`. Desktop and CLI share one application service
+  over pinned public content/review packages. CLEAR owns a versioned three-topic
+  wording checklist and application controls; no parser, OCR runner, transport or
+  review loop is copied. The base workflow needs no AI, private service or Foundry.
+- Exact PDF page quotes, selected coverage and all unassessed human tasks remain
+  visible. Explicit CLI OCR retains native provenance and unverified transcription.
+  The optional Python AI host boundary and two fabricated CLI providers preserve
+  shared selection, budgets and usage; fabricated modes accept only bundled PDFs.
+  No legal-risk rating, contract clearance or PDF edit is applied.
+- New result folders retain source/checklist/report/context and optional AI receipts;
+  their manifest is written last. Strict reopening performs no inference and can
+  verify fresh PDF bytes. Existing folders are never replaced. These are returned
+  result checkpoints, not durable in-flight execution recovery.
+- [CLEAR CI 40133910902](https://github.com/nexus-research-software/nexus-clear/actions/runs/40133910902)
+  passes all nine Linux/Windows/macOS x Python 3.11/3.12/3.13 environments. Each
+  verifies 45 base and 52 combined application tests from source and clean installed
+  wheels, with no application skips. Shared regressions pass review 100, AI 69,
+  connector 67 and base content 75; 11 optional native content cases remain covered
+  by the retained P3b matrix. Each job builds distributions, exercises the actual
+  one-checkout bootstrap, runs native Tesseract on fabricated text/scanned/mixed
+  PDFs, and verifies the native Tk demo/worker/detail/save/restore/close workflow.
+  Local Linux/Python 3.12, static/relative-link and 29-blob identity checks also pass.
+  Native smoke does not establish full interactive usability, accessibility,
+  native installers or every OS/CPU combination.
+- Tested head: `830dde0a8e4cab8de5e2a56f45aa1edeec152c20`; tree:
+  `4b6d7e9b9bcdf919e787d90a1f4f115009895043`. CLEAR merge:
+  `3d1b4884a62243d284d67745046c22f9badf027c`; its tree equals the tested tree.
+  The merge is retained at `checkpoint/20261024-public-p4a`. The catalog's
+  corresponding tested/merged revision and checkpoint are recorded in its own PR.
+- This is P4a implementation/conformance, not full P4 or application acceptance.
+  P4b improves PDF preview, review disposition/checklist navigation and explicit
+  OCR/provider setup. Real model/runtime/hardware selection, joint checklist/quality
+  criteria, representative OCR accuracy, licensing, full native installation and
+  consumer parity remain open. New public code and fabricated fixtures only;
+  existing applications, original Content/RC4, saved data, private C00/C01 and
+  private dependency pins remain unchanged.
+
+## Retained public P3c AI review checkpoint
 
 - [Review PR 3](https://github.com/nexus-research-software/nexus-review/pull/3)
   advances `nexus-review` to `0.1.0.dev2`. Optional `nexus_review.ai` uses the pinned
@@ -200,6 +241,17 @@ and Python 3.12 only. No actual provider request was made during this checkpoint
 
 ## Recovery and merge records
 
+`checkpoint/20261024-public-p4a-start` preserves the pre-P4a revisions:
+
+| Repository | P4a recovery revision |
+| --- | --- |
+| `nexus-clear` | `da524d69827d55041fcbb40a27611a051d0d111a` (README-only initialization) |
+| `nexus-ecosystem` | `2992e3c530973e38f5828456d174708faf125a44` |
+
+Completed P4a refs and tested/merged tree equality are recorded in both PRs.
+Rollback uses reviewed reverts; retain compatible environments and saved reviews.
+Keep earlier shared-package and private checkpoints without changing their pins.
+
 `checkpoint/20261024-public-p3c-start` preserves the pre-P3c revisions:
 
 | Repository | P3c recovery revision |
@@ -271,14 +323,14 @@ rollback needed at this checkpoint because the existing route is still active.
 
 ## Next execution gate
 
-Prepare public P4: a standalone CLEAR PDF workflow candidate using the now-tested
-shared content/review/AI contracts, fabricated acceptance scenarios, explicit backend
-selection, page-grounded findings, incomplete coverage and exportable reports.
-Continue base-only deterministic use and optional local OCR. Actual inference and
+Continue public P4b: improve CLEAR's PDF preview, reviewer disposition and checklist
+navigation, and explicit OCR/provider configuration on the shared interfaces.
+Use fabricated scenarios and preserve base-only use, optional local OCR, source
+identity, incomplete coverage and saved-result recovery. Actual inference and useful
 review quality require a chosen model/runtime/hardware and joint criteria before
-application acceptance; a synthetic candidate can proceed independently.
-Original-source extraction and consumer/revision parity retain publication/licensing
-gates. Keep existing application routes and saved data intact.
+application acceptance. Keep the developer bootstrap separate from P5's full novice
+install/update/repair/rollback qualification. Original-source extraction and consumer
+parity retain publication/licensing gates; existing routes and saved data stay intact.
 
 Internal import/CI, native/live private qualification, and one governed opt-in
 consumer route are deferred acceptance gates. Resume them after feasible public

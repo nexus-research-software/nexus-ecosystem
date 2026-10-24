@@ -2,11 +2,12 @@
 
 Modular tools for research, technical documents, and knowledge workflows.
 
-**Status: public work takes priority; private integration is deferred.** We are advancing the shared contracts, synthetic backend tests, public connectors, reusable components, and application/installation work that can proceed without an internal service. The private candidate remains checkpointed. This catalog does not yet offer application downloads. Read the [public-first execution order](docs/PUBLIC_FIRST.md) and [current status and checkpoints](docs/STATUS.md).
+**Status: public work takes priority; private integration is deferred.** We are advancing the shared contracts, synthetic backend tests, public connectors, reusable components, and application/installation work that can proceed without an internal service. The private candidate remains checkpointed. CLEAR now has a standalone source-based development candidate; qualified application installers remain pending. Read the [public-first execution order](docs/PUBLIC_FIRST.md) and [current status and checkpoints](docs/STATUS.md).
 
 ## Start here
 
 - **Using an application:** read [Getting started](docs/GETTING_STARTED.md). Keep using your existing installation during migration.
+- **Trying CLEAR:** start with the [standalone PDF wording-review candidate](https://github.com/nexus-research-software/nexus-clear). Its desktop and CLI use shared packages; the base workflow needs no model or private service. This is a development candidate, not contract clearance or an accepted application release.
 - **Understanding the design:** read [Architecture](docs/ARCHITECTURE.md).
 - **Following development:** read the [staged roadmap](docs/ROADMAP.md) and [current status](docs/STATUS.md).
 - **Developing without a private service:** try the [separately installed synthetic backends](https://github.com/nexus-research-software/nexus-ai/blob/main/docs/PUBLIC_DEVELOPMENT.md).
@@ -30,7 +31,7 @@ These are intended repository names. Entries without links have not yet been est
 | Ledger | `nexus-ledger` | Existing application; public migration pending |
 | Repository Analyst | `nexus-repository-analyst` | Existing application; public migration pending |
 | Research Workbench | `nexus-research-workbench` | Existing application; public migration pending |
-| CLEAR | `nexus-clear` | First new application; PDF required in its first release |
+| CLEAR | [nexus-clear](https://github.com/nexus-research-software/nexus-clear) | P4a standalone PDF wording-review candidate: desktop/CLI, explicit local OCR and saved reports; application acceptance remains open |
 | SCOPE | `nexus-scope` | Planned after CLEAR |
 
 ## Shared components
@@ -47,7 +48,7 @@ These are intended repository names. Entries without links have not yet been est
 | Additional providers | `nexus-provider-asksage` | Candidate future adapter; placement and implementation remain to be decided |
 | Optional service | `nexus-ai-gateway` | Consider only when centralized inference has a demonstrated need |
 
-The catalog includes generic source-identity, test-evidence, and private boundary-plan tooling with synthetic CI checks. Six repositories are now established: this catalog, `.github`, `nexus-ai`, `nexus-provider-openai-compatible`, `nexus-content`, and `nexus-review`. Public package evidence covers synthetic workflows. Native synthetic OCR checks now pass; representative OCR accuracy, actual model quality, application acceptance and consumer migration remain open. Use separate development environments; the new content prototype is not an upgrade of the retained original Content/RC4 implementation.
+The catalog includes generic source-identity, test-evidence, and private boundary-plan tooling with synthetic CI checks. Seven repositories are now established: this catalog, `.github`, `nexus-ai`, `nexus-provider-openai-compatible`, `nexus-content`, `nexus-review`, and `nexus-clear`. Public package evidence covers synthetic workflows. Native synthetic OCR checks now pass; representative OCR accuracy, actual model quality, application acceptance and consumer migration remain open. Use separate development environments; the new content prototype is not an upgrade of the retained original Content/RC4 implementation.
 
 ## Design commitments
 
@@ -61,5 +62,5 @@ Linux, Windows, and macOS are release targets. Support is established by testing
 
 Public examples use templates and synthetic material. Real documents, their derived evidence, credentials, and private provider implementation do not belong here.
 
-Licensing and attribution decisions must be completed before application source publication. No application source or private integration has been imported into these starter repositories.
+Licensing and attribution decisions remain required before original application-source publication and any package/application release. CLEAR is new public code; no original application source or private integration has been imported.
 

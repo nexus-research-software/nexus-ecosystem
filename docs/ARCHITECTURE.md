@@ -2,7 +2,8 @@
 
 This is the target architecture. Public experimental packages now implement AI
 contracts, a compatible connector, read-only PDF evidence, and shared review/approval
-contracts. Original application/source extraction and consumer migration remain
+contracts. New `nexus-clear` composes these packages as a standalone experimental
+PDF wording-review application. Original application/source extraction and consumer migration remain
 open. The [execution status](STATUS.md) distinguishes synthetic package evidence
 from representative OCR quality, model and application acceptance.
 
@@ -58,6 +59,17 @@ so earlier approvals cannot move to a new run. No hidden retry, fallback, provid
 probe, editing or execution authority is introduced. Compatible connectors stay
 independent; GenAI-specific code remains private. This API does not claim monetary
 quotas, durable in-flight recovery, cross-page reasoning or actual model quality.
+
+P4a makes CLEAR the first new application consumer. Its desktop and CLI share one
+application service; versioned JSON owns the wording checklist, while extraction,
+OCR, evidence, review execution and AI receipts stay in their existing packages.
+Base use requires no AI, private service or Foundry. An explicit Python host supplies
+AI configuration; fabricated CLI backends only accept bundled synthetic PDFs.
+Checklist identity binds every shared rule. New-folder exports retain validated
+returned results without copying the source PDF; restoration performs no inference.
+These folders do not provide durable in-flight recovery or authenticated approvals.
+The developer bootstrap pins exact public revisions and refuses existing environments;
+full native installation/update/repair acceptance remains P5 work.
 
 Prepare these interfaces in Stage 6, deliver standalone CLEAR and SCOPE in Stage 7, and pilot TRACER review/approve/revise/re-review in Stage 9. Qualify CLEAR and SCOPE integration separately after demonstrating value. Enabling or disabling Foundry must preserve existing direct review capabilities, evidence, approval rules, and saved results. Backend selection through `nexus-ai` remains independent of orchestration. See the [staged roadmap](ROADMAP.md#foundry-integration-across-stages) for acceptance gates.
 
