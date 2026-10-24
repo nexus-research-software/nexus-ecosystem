@@ -1,7 +1,7 @@
 # Execution status — 2026-10-24
 
-**Current focus: public P3c AI review adaptation and accounting.** Public P1/P2
-and the P3a/P3b content/review and native OCR increments are implemented. Full P3, actual Phase 8 model
+**Current focus: public P4 CLEAR PDF workflow candidate.** Public P1/P2
+and the P3a/P3b/P3c content/review, native OCR and optional AI increments are implemented. Full P3, actual Phase 8 model
 qualification and application acceptance remain open.
 The execution order now prioritizes every feasible public milestone before
 resuming internal private-repository work. Phase 3 remains at its implemented
@@ -19,13 +19,49 @@ separate public/private acceptance gates.
 | 3 — Private adapter | Deferred at the retained offline checkpoint: 242 source and 242 installed-wheel tests on Linux/Python 3.12; private handoff prepared | Internal/native/live qualification and application parity when private work resumes; no default switch |
 | 4 — Consumer migration | Consumer requirements and boundaries identified | Prove one opt-in route, then each remaining application entry point |
 | 5 — Installation | AI, compatible provider, content and review packages have cross-platform wheel checks; synthetic-provider selection/removal checks implemented | Novice application install/update/repair/rollback journeys |
-| 6 — Shared review | P3a/P3b implemented: exact PDF evidence, optional native rendering/OCR with provenance, explicit gaps, review/approval contracts; 86 content and 49 review source/installed-wheel tests in nine environments | Representative OCR quality, AI review/accounting, original-source publication and consumer/editing parity; authenticated host workflows and revision results |
+| 6 — Shared review | P3a/P3b/P3c implemented: exact PDF/OCR evidence, review/approval contracts and optional AI review with receipts; 86 content checks, 53 base-only and 100 combined review checks from source/installed wheels in nine environments | Representative OCR and real-model review quality, original-source publication and consumer/editing parity; authenticated host workflows and revision results |
 | 7 — CLEAR, then SCOPE | CLEAR PDF requirement retained | Build and jointly accept standalone applications |
 | 8 — Another backend | Public compatible chat connector implemented; 67 source/installed-wheel checks and 69 shared-contract regression checks; explicit profiles and scoped qualification | Actual HTTP/model/runtime/hardware, quality/capacity and application/native qualification; no real model qualified yet |
 | 9 — Foundry | Optional workflow plan recorded | Qualified shared review and consumer migration, then supervised pilot |
 | 10 — Releases | No application release or legacy retirement claimed | All release gates, migration guidance and retained rollback |
 
-## Public P3b rendering/OCR checkpoint
+## Public P3c AI review checkpoint
+
+- [Review PR 3](https://github.com/nexus-research-software/nexus-review/pull/3)
+  advances `nexus-review` to `0.1.0.dev2`. Optional `nexus_review.ai` uses the pinned
+  public AI contract while base deterministic review remains usable with no AI
+  installed. Explicit provider/profile/model/configuration and schema qualification
+  govern every completion; findings resolve to exact quote occurrences on the
+  selected native/OCR page. No implicit retry, fallback, probe, approval or edit.
+- Workflow completion/attempt/repair/time and size limits preserve earlier findings.
+  Receipts retain normalized usage even for failed, discarded and interrupted
+  responses. Unknown usage remains unknown and stops further dispatch by default.
+  Strict saved runs and escaped HTML bind policy, source, backend and call ledger
+  into the report identity, preventing approval transfer to another execution.
+- [Review CI 40130758218](https://github.com/nexus-research-software/nexus-review/actions/runs/40130758218)
+  passes all nine Linux/Windows/macOS x Python 3.11/3.12/3.13 combinations. Each
+  verifies 53 base-only tests, then 100 combined base/AI tests, both from source
+  and clean installed wheels. Consumer regressions pass 69 AI, 67 connector and
+  75 base content checks; the 11 optional native content checks remain required
+  in the separate P3b content matrix. Injected transport exercises the actual public
+  connector mapping with one separately receipted probe and two review completions.
+- Local Linux/Python 3.12 source/wheel, build and static checks pass. Existing
+  deterministic report JSON matches the P3b implementation byte for byte in a
+  local compatibility comparison. The exact tested head is
+  `ad1fb35a24f9260cb95e7bc191e956a34b49cb66`, tree
+  `508cac5b0434cea2d4a9b7444cb035ddeea5a691`.
+- Review merge: `d95a5f8b29c2266dfd7feed57682fe4ce03fc301`; its tree equals the tested tree.
+  Retain it at `checkpoint/20261024-public-p3c`. The catalog's corresponding
+  tested/merged revision and completion checkpoint are recorded in its own PR.
+- This completes the P3c implementation/conformance increment. Real-model/HTTP
+  qualification, task quality, representative OCR accuracy, consumer/revision
+  parity, native application acceptance and licensing remain open. No dollar or
+  workflow-token quota, durable in-flight resume or cross-page reasoning is
+  claimed. Existing applications, original Content/RC4, saved data, public content/
+  AI/connector code and private C00/C01/pins remain unchanged. No real documents,
+  protected endpoints or credentials were published.
+
+## Retained public P3b rendering/OCR checkpoint
 
 - [Content PR 2](https://github.com/nexus-research-software/nexus-content/pull/2)
   advances `nexus-content` to `0.1.0.dev1`. Optional PDFium/Pillow rendering and
@@ -164,6 +200,17 @@ and Python 3.12 only. No actual provider request was made during this checkpoint
 
 ## Recovery and merge records
 
+`checkpoint/20261024-public-p3c-start` preserves the pre-P3c revisions:
+
+| Repository | P3c recovery revision |
+| --- | --- |
+| `nexus-review` | `a64a33cc44db3fc900965893afbe2f968c4b96f9` |
+| `nexus-ecosystem` | `33f5187cb4bebb95a9c5085cea682466a9a1fddc` |
+
+Completed P3c refs and tested/merged tree equality are recorded in both PRs.
+Rollback uses reviewed reverts and the prior pinned development environment;
+retain saved AI artifacts and compatible readers. Keep P3b and earlier refs.
+
 `checkpoint/20261024-public-p3b-start` preserves the pre-P3b revisions:
 
 | Repository | P3b recovery revision |
@@ -224,14 +271,14 @@ rollback needed at this checkpoint because the existing route is still active.
 
 ## Next execution gate
 
-Continue public P3c: adapt the review boundary to the public AI contract with
-complete usage, budget and interruption receipts. Keep explicit native/OCR origins
-and incomplete coverage through the model boundary; use fabricated responses for
-contract checks while actual-model quality remains a separate gate. Original-source
-extraction and consumer/revision parity retain their publication/licensing gates;
-actual inference awaits a chosen model/runtime and hardware. These independent
-public increments prepare CLEAR's first PDF workflow without requiring internal
-access or changing existing application routes.
+Prepare public P4: a standalone CLEAR PDF workflow candidate using the now-tested
+shared content/review/AI contracts, fabricated acceptance scenarios, explicit backend
+selection, page-grounded findings, incomplete coverage and exportable reports.
+Continue base-only deterministic use and optional local OCR. Actual inference and
+review quality require a chosen model/runtime/hardware and joint criteria before
+application acceptance; a synthetic candidate can proceed independently.
+Original-source extraction and consumer/revision parity retain publication/licensing
+gates. Keep existing application routes and saved data intact.
 
 Internal import/CI, native/live private qualification, and one governed opt-in
 consumer route are deferred acceptance gates. Resume them after feasible public

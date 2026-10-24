@@ -10,7 +10,7 @@ order without waiting for internal access. Source-publication decisions, model
 selection, and actual acceptance evidence still apply. See the detailed
 [public-first work sequence and gates](PUBLIC_FIRST.md).
 
-**Current focus: public P3c AI review adaptation and accounting.** Public P1/P2 and the P3a/P3b contract and OCR increments are implemented; Phase 8's actual model qualification remains open. Phase 3 has an offline candidate; acceptance remains open and its internal work is deferred. Stages 0 and 1 retain their acceptance/publication gates. Stage 2 has a public [nexus-ai prototype](https://github.com/nexus-research-software/nexus-ai), version `0.1.0.dev2`, with synchronous text/schema completion, explicit selection, capability and schema-qualification controls, bounded accounting, cancellation, safe error receipts, and lazy discovery. All 69 source and clean installed-wheel tests pass across Linux, Windows, and macOS with Python 3.11–3.13. Adapter failures retain normalized termination evidence as well as usage and call counts. A separate public synthetic adapter example exercises installation, explicit selection between two fabricated backends, and removal; it does not qualify a real model.
+**Current focus: prepare public P4 CLEAR PDF workflow candidate.** Public P1/P2 and the P3a/P3b/P3c contract, OCR and optional AI review increments are implemented; Phase 8's actual model qualification remains open. Phase 3 has an offline candidate; acceptance remains open and its internal work is deferred. Stages 0 and 1 retain their acceptance/publication gates. Stage 2 has a public [nexus-ai prototype](https://github.com/nexus-research-software/nexus-ai), version `0.1.0.dev2`, with synchronous text/schema completion, explicit selection, capability and schema-qualification controls, bounded accounting, cancellation, safe error receipts, and lazy discovery. All 69 source and clean installed-wheel tests pass across Linux, Windows, and macOS with Python 3.11–3.13. Adapter failures retain normalized termination evidence as well as usage and call counts. A separate public synthetic adapter example exercises installation, explicit selection between two fabricated backends, and removal; it does not qualify a real model.
 
 The new public [compatible chat connector](https://github.com/nexus-research-software/nexus-provider-openai-compatible)
 implements explicit immutable profiles, expiring instance-bound qualification,
@@ -34,8 +34,15 @@ controlled subprocesses, limits, cancellation and retained progress. Generation-
 text-only snapshots are preserved; generation-two OCR text remains unverified and
 visible in review reports. The synthetic native baseline passes on all nine
 OS/Python combinations; representative OCR accuracy is a separate acceptance gate.
-Next is P3c AI review adaptation with usage, budget and interruption receipts, then
-consumer/revision qualification as publication decisions permit.
+P3c advances review to `0.1.0.dev2` with optional `nexus_review.ai`. Explicit provider,
+model/configuration and schema qualification govern whole-page reviews. Exact quote
+occurrences bind findings to evidence; bounded calls, attempts, repairs and timeouts
+retain usage and prior findings through interruption. Unknown usage remains unknown.
+Strict AI reports bind backend/run receipts to change plans and approvals. The
+53 base-only and 100 combined source/installed-wheel tests pass in nine environments;
+69 AI and 67 connector regressions also pass. Actual review/model quality remains
+open. Next is a public P4 CLEAR PDF workflow candidate with fabricated scenarios,
+while consumer/revision qualification proceeds as publication decisions permit.
 
 An opt-in TRACER compatibility candidate passes 43 focused synthetic checks, including retained findings after later failure, unfinished coverage, cancellation, and retry/repair accounting. Its patch and detailed evidence remain private. Existing application composition and the governed private transport remain unchanged. The bridge cannot replace enforced quota handling, and it does not establish live-provider or native-workflow parity.
 
