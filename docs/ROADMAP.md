@@ -1,12 +1,20 @@
 # Staged roadmap
 
-This public execution outline describes the intended migration. Stages are milestone-based; dates will follow demonstrated readiness.
+This public execution outline describes the intended migration. Stages are milestone-based; dates will follow demonstrated readiness. Phase numbers identify outcomes, not a requirement to finish every private gate before advancing unrelated public work.
 
-**Current status: Phase 3 offline candidate implemented; acceptance remains open.** Stages 0 and 1 retain their acceptance/publication gates. Stage 2 has a public [nexus-ai prototype](https://github.com/nexus-research-software/nexus-ai), version `0.1.0.dev2`, with synchronous text/schema completion, explicit selection, capability and schema-qualification controls, bounded accounting, cancellation, safe error receipts, and lazy discovery. All 69 source and clean installed-wheel tests pass across Linux, Windows, and macOS with Python 3.11–3.13. Adapter failures now retain normalized termination evidence as well as usage and call counts.
+**Execution order changed on 2026-10-24: complete feasible public work first.**
+Private adapter integration is deferred at its existing checkpoint. Public
+contracts, synthetic/injected-transport testing, public connectors, content and
+review components, applications, and installation tooling may proceed in dependency
+order without waiting for internal access. Source-publication decisions, model
+selection, and actual acceptance evidence still apply. See the detailed
+[public-first work sequence and gates](PUBLIC_FIRST.md).
+
+**Current focus: public foundations across Phases 2, 5, and 8.** Phase 3 has an offline candidate; acceptance remains open and its internal work is deferred. Stages 0 and 1 retain their acceptance/publication gates. Stage 2 has a public [nexus-ai prototype](https://github.com/nexus-research-software/nexus-ai), version `0.1.0.dev2`, with synchronous text/schema completion, explicit selection, capability and schema-qualification controls, bounded accounting, cancellation, safe error receipts, and lazy discovery. All 69 source and clean installed-wheel tests pass across Linux, Windows, and macOS with Python 3.11–3.13. Adapter failures retain normalized termination evidence as well as usage and call counts. A separate public synthetic adapter example now exercises installation, explicit selection between two fabricated backends, and removal; it does not qualify a real model.
 
 An opt-in TRACER compatibility candidate passes 43 focused synthetic checks, including retained findings after later failure, unfinished coverage, cancellation, and retry/repair accounting. Its patch and detailed evidence remain private. Existing application composition and the governed private transport remain unchanged. The bridge cannot replace enforced quota handling, and it does not establish live-provider or native-workflow parity.
 
-The separately installable private adapter candidate passes 242 offline source tests and the same 242 tests from a clean installed wheel on Linux/Python 3.12, without an application installation. Those checks include 192 retained runtime cases and 50 new adapter cases. Private code, configuration, diagnostic evidence and recovery bundles remain outside public repositories. **Next: import the prepared private project internally, run internal/native/live qualification, and prove one opt-in consumer route before changing application defaults.** See [status and recovery checkpoints](STATUS.md) for completed work and remaining gates.
+The separately installable private adapter candidate passes 242 offline source tests and the same 242 tests from a clean installed wheel on Linux/Python 3.12, without an application installation. Those checks include 192 retained runtime cases and 50 new adapter cases. Private code, configuration, diagnostic evidence and recovery bundles remain outside public repositories. **Deferred private gate:** internal import, internal/native/live qualification, and one opt-in consumer route remain required before changing private application defaults. They no longer block unrelated public implementation. See [status and recovery checkpoints](STATUS.md) for completed work and remaining gates.
 
 The catalog and organization foundations provide [baseline tooling](BASELINE.md), a [boundary-plan checker](BOUNDARIES.md), synthetic CI checks, a [capability ledger](CAPABILITY_LEDGER.md), and [AI contract requirements](AI_CONTRACT_REQUIREMENTS.md). Source baselines cover all supplied canonical projects. The repaired TRACER candidate passes its full Linux source suite; ATLAS, Ecosystem Manager, Cartographer, Repository Analyst, and Research Workbench pass their headless suites with skips retained. Foundry and Ledger retain failures requiring a display. The unpublished reconciled Content candidate matches RC4 test-case outcomes across five application consumers. A provisional private map accounts for all 4,133 included source files. Native/live-provider qualification, installation acceptance, application licensing and publication decisions, and detailed boundary review remain open. No application extraction or release qualification is claimed.
 
@@ -23,6 +31,11 @@ The catalog and organization foundations provide [baseline tooling](BASELINE.md)
 | 8 — Prove another backend | Select and test an open-source model through a public connector | Reproducible model/runtime configuration and task-specific capability results |
 | 9 — Add optional Foundry workflows | Pilot supervised TRACER review and revision, then extend to CLEAR and SCOPE where demonstrated value justifies it | Preserved direct reviews, evidence, and approvals; measured quality, manual effort, latency, and model usage; separate qualification for any gateway |
 | 10 — Release and retire legacy paths | Publish qualified releases and remove replaced implementation only after acceptance | Release manifests, compatibility records, migration guidance, and retained rollback artifacts |
+
+Public-only workflows may reach release readiness independently of the private
+adapter when all of their own gates pass. A public release must state its tested
+providers and unsupported workflows explicitly. It must not replace an existing
+installation or retire its legacy path on the strength of synthetic checks alone.
 
 ## Foundry integration across stages
 
@@ -69,6 +82,7 @@ No additional repository is required solely for this integration. Keep reusable 
 - Build CLEAR first among the new applications, with PDF in its first release.
 - Keep Foundry optional for TRACER, CLEAR, and SCOPE; prepare shared interfaces in Stage 6 and pilot orchestration in Stage 9 without delaying CLEAR.
 - Select the first local model and hardware later.
+- Complete feasible public work before resuming internal private-repository work; retain separate public, private, and application acceptance evidence.
 
 ## Decisions still required
 
