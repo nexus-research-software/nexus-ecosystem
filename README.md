@@ -2,13 +2,13 @@
 
 Modular tools for research, technical documents, and knowledge workflows.
 
-**Status: public foundations in progress.** This repository is the entry point for the ecosystem. Application source migration, installers, and release qualification are still ahead. No application downloads are currently offered by this catalog.
+**Status: Phase 3 private adapter qualification in progress.** The public AI contract and a separately installable private adapter candidate pass offline checks. Internal and live qualification, application migration, installers, and releases remain ahead. This catalog does not yet offer application downloads. Read the [current status and checkpoints](docs/STATUS.md).
 
 ## Start here
 
 - **Using an application:** read [Getting started](docs/GETTING_STARTED.md). Keep using your existing installation during migration.
 - **Understanding the design:** read [Architecture](docs/ARCHITECTURE.md).
-- **Following development:** read the [staged roadmap](docs/ROADMAP.md).
+- **Following development:** read the [staged roadmap](docs/ROADMAP.md) and [current status](docs/STATUS.md).
 - **Establishing the baseline:** use the [baseline tools](docs/BASELINE.md) and [capability ledger](docs/CAPABILITY_LEDGER.md).
 - **Planning repository ownership:** use the [boundary-plan checker](docs/BOUNDARIES.md).
 - **Contributing:** read the [shared contribution guide](https://github.com/nexus-research-software/.github/blob/main/CONTRIBUTING.md).
