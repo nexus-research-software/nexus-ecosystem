@@ -37,7 +37,7 @@ These are intended repository names. Entries without links have not yet been est
 | Organization | [.github](https://github.com/nexus-research-software/.github) | Public profile and shared contribution guidance |
 | Installation | `ecosystem-manager` | Acquire, install, repair, launch, and roll back selected applications |
 | Content | `nexus-content` | Read-only content extraction and provenance |
-| AI contracts | `nexus-ai` | Provider-neutral requests, results, capabilities, and adapter interfaces |
+| AI contracts | [nexus-ai](https://github.com/nexus-research-software/nexus-ai) | Provider-neutral requests, results, capabilities, and adapter interfaces |
 | Review | `nexus-review` | Shared review execution, findings, change plans, and reports |
 | Local and compatible providers | `nexus-provider-openai-compatible` | Public connector for qualified compatible endpoints |
 | Additional providers | `nexus-provider-asksage` | Candidate future adapter; placement and implementation remain to be decided |
@@ -58,3 +58,4 @@ Linux, Windows, and macOS are release targets. Support is established by testing
 Public examples use templates and synthetic material. Real documents, their derived evidence, credentials, and private provider implementation do not belong here.
 
 Licensing and attribution decisions must be completed before application source publication. No application source or private integration has been imported into these starter repositories.
+
