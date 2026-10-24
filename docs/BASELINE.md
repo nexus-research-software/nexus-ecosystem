@@ -64,6 +64,30 @@ Record original and repaired test names when a contract test changes. Do not add
 
 ## Stage 0 completion criteria
 
+### Recorded source-test checkpoint
+
+These are Linux/Python 3.12 source-test results from isolated application environments. Skips remain unqualified. Detailed identities, commands, dependency records, test names, failures, and logs are private.
+
+| Project | Passed | Failed | Skipped | Scope or remaining issue |
+| --- | ---: | ---: | ---: | --- |
+| TRACER | 4,183 | 0 | 150 | Repaired full-suite candidate; separate readiness-checker correction has its own focused evidence |
+| ATLAS | 809 | 0 | 49 | Full configured suite; 18 passing subtests are not added to this total; standalone verifier also passed |
+| Ecosystem Manager | 308 | 0 | 55 | Supplied lock constraints; quick qualification passed after excluding a supplied runtime log from a separate staging copy |
+| Cartographer | 231 | 0 | 68 | Supplied Content RC4 dependency baseline |
+| Ledger | 91 | 4 | 7 | Four tests fail during Tk construction because no display is available |
+| Repository Analyst | 91 | 0 | 0 | Supplied Content RC4 dependency baseline |
+| Research Workbench | 74 | 0 | 14 | Supplied Content RC4 dependency baseline |
+| Foundry | 794 | 1 | 63 | One widget-construction test requires a display |
+| Content | 183 | 0 | 0 | Reconciled development source candidate; separate installed-package checks also passed |
+
+The Content development wheel was compared with RC4 in ATLAS, Cartographer, Ledger, Repository Analyst, and Research Workbench. Each application kept all other installed dependencies unchanged. Every collected test case retained the same pass/fail/skip status, including Ledger's four display failures. RC4 was restored afterward and each environment matched its original dependency record. This establishes no new failures in these source suites; it does not select a shared release or establish native/live-provider acceptance.
+
+The Ecosystem Manager quick check originally failed its source-hygiene gate on a runtime log included in the supplied tree. A separate staging copy omitted that log and passed metadata, hygiene, schemas, compilation, and the managed-environment acceptance smoke. Originals and the first failing report remain preserved. Full package, offline-bundle, and native release gates are still separate work.
+
+The [boundary plan](BOUNDARIES.md) accounts for the frozen source inventory. Candidate repairs must be reconciled into a new snapshot before files are moved or exported.
+
+### Remaining exit requirements
+
 - Original archives remain preserved with verified identities.
 - Each application has an agreed capability ledger, including entry points, saved state, outputs, and integration boundaries.
 - Existing regression checks run repeatably in identified environments; failures are reproduced and either fixed separately or explicitly accepted as baseline debt with owners.
