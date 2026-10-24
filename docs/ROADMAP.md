@@ -10,7 +10,17 @@ order without waiting for internal access. Source-publication decisions, model
 selection, and actual acceptance evidence still apply. See the detailed
 [public-first work sequence and gates](PUBLIC_FIRST.md).
 
-**Current focus: public foundations across Phases 2, 5, and 8.** Phase 3 has an offline candidate; acceptance remains open and its internal work is deferred. Stages 0 and 1 retain their acceptance/publication gates. Stage 2 has a public [nexus-ai prototype](https://github.com/nexus-research-software/nexus-ai), version `0.1.0.dev2`, with synchronous text/schema completion, explicit selection, capability and schema-qualification controls, bounded accounting, cancellation, safe error receipts, and lazy discovery. All 69 source and clean installed-wheel tests pass across Linux, Windows, and macOS with Python 3.11–3.13. Adapter failures retain normalized termination evidence as well as usage and call counts. A separate public synthetic adapter example now exercises installation, explicit selection between two fabricated backends, and removal; it does not qualify a real model.
+**Current focus: public P3 shared content/review preparation.** Public P1/P2 package foundations are implemented; Phase 8's actual model qualification remains open. Phase 3 has an offline candidate; acceptance remains open and its internal work is deferred. Stages 0 and 1 retain their acceptance/publication gates. Stage 2 has a public [nexus-ai prototype](https://github.com/nexus-research-software/nexus-ai), version `0.1.0.dev2`, with synchronous text/schema completion, explicit selection, capability and schema-qualification controls, bounded accounting, cancellation, safe error receipts, and lazy discovery. All 69 source and clean installed-wheel tests pass across Linux, Windows, and macOS with Python 3.11–3.13. Adapter failures retain normalized termination evidence as well as usage and call counts. A separate public synthetic adapter example exercises installation, explicit selection between two fabricated backends, and removal; it does not qualify a real model.
+
+The new public [compatible chat connector](https://github.com/nexus-research-software/nexus-provider-openai-compatible)
+implements explicit immutable profiles, expiring instance-bound qualification,
+text/schema mapping, single-attempt HTTP dispatch, strict model/output validation,
+safe receipts, bounded bodies, and cooperative cancellation/deadlines. Its offline
+tests and installable package complete the P2 implementation scope. Real HTTP/model,
+task-quality, context-capacity and application/native acceptance remain separate.
+The existing shared runtime and private candidate pins are unchanged. Next, prepare
+the shared content/review interfaces and synthetic PDF evidence; original-source
+extraction still needs publication/licensing review.
 
 An opt-in TRACER compatibility candidate passes 43 focused synthetic checks, including retained findings after later failure, unfinished coverage, cancellation, and retry/repair accounting. Its patch and detailed evidence remain private. Existing application composition and the governed private transport remain unchanged. The bridge cannot replace enforced quota handling, and it does not establish live-provider or native-workflow parity.
 
