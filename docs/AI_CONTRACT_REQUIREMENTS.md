@@ -1,6 +1,10 @@
 # Requirements for the first shared AI contract
 
-This is a Stage 2 design input, not an implemented runtime or approved stable API. Characterization comes before moving consumers.
+This document remains the acceptance target for Stage 2. The first [nexus-ai implementation](https://github.com/nexus-research-software/nexus-ai) is an experimental `0.1.0.dev0` prototype, not an approved stable API. Characterization comes before moving consumers.
+
+The first slice implements synchronous text and local JSON-schema completion, immutable request/selection types, capability checks, normalized results/errors/usage, bounded attempt and repair accounting, cancellation/deadline checks, and metadata-only provider discovery. Synthetic conformance and clean installed-wheel checks exercise these contracts. There is no live adapter or migrated application. Streaming, tools, vision, and embeddings have separate capability identifiers but no execution methods yet.
+
+The prototype reports incomplete output without returning partial text. TRACER's retained partial-result workflows, schema-specific qualification, existing governor, and citation protections therefore remain explicit compatibility work before migration.
 
 ## Preserve existing owners
 
@@ -21,4 +25,4 @@ Begin with the structured-completion path already used by TRACER and keep a comp
 
 Before migration, construct synthetic conformance cases covering schema rejection without silent downgrade, explicit unsupported capability, cancellation, unknown usage, retry/admission accounting, provider identity, safe error receipts, and import/discovery without credentials. Keep provider-specific envelope fixtures in the corresponding private project.
 
-Stage 0 must first establish repeatable results and disposition baseline failures. Stage 1 must settle source publication and ownership. New public contract code can then be reviewed in its owning `nexus-ai` repository without copying application or provider implementations into this catalog.
+Consumer migration requires repeatable baseline results, disposition of baseline failures, and reviewed ownership/publication decisions. New contract code is reviewed in its owning `nexus-ai` repository while those gates remain open. No application or provider implementation is copied into this catalog or the contract prototype.
