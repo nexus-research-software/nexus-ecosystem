@@ -43,7 +43,7 @@ These are intended repository names. Entries without links have not yet been est
 | Additional providers | `nexus-provider-asksage` | Candidate future adapter; placement and implementation remain to be decided |
 | Optional service | `nexus-ai-gateway` | Consider only when centralized inference has a demonstrated need |
 
-The catalog includes generic source-identity, test-evidence, and private boundary-plan tooling with synthetic CI checks. Only the two linked repositories have been created as part of this foundation setup. Shared package extraction and application migration are not complete.
+The catalog includes generic source-identity, test-evidence, and private boundary-plan tooling with synthetic CI checks. Three repositories are now established: this catalog, `.github`, and the experimental `nexus-ai` package. Application source extraction and consumer migration are not complete.
 
 ## Design commitments
 
