@@ -1,26 +1,49 @@
 # Execution status — 2026-10-24
 
-**Current phase: 3 — prove the first private adapter.** A separately installable
-offline candidate is implemented and checkpointed. Phase 3 is not accepted for
-production selection yet. Existing application defaults and authoritative sources
-remain in place. CLEAR with PDF remains the first new application, after shared
-review extraction; Foundry remains optional.
+**Current focus: public-first development, beginning with Phases 2 and 5.**
+The execution order now prioritizes every feasible public milestone before
+resuming internal private-repository work. Phase 3 remains at its implemented
+offline checkpoint and is not accepted for production selection. Existing
+application defaults and authoritative sources remain in place. CLEAR with PDF
+remains the first new application, after shared review extraction; Foundry remains
+optional. See the [public-first sequence](PUBLIC_FIRST.md) for dependencies and
+separate public/private acceptance gates.
 
 | Phase | Current evidence | Remaining exit condition |
 | --- | --- | --- |
 | 0 — Baselines | Canonical source identities, capability inventory and baseline evidence captured | Native/live checks and joint acceptance of remaining baseline issues |
 | 1 — Repository boundaries | Three public repositories, ownership mapping, boundary tooling, and phase/status merge template | Original-source publication/licensing decisions and internal project import |
 | 2 — AI contract | `nexus-ai 0.1.0.dev2`; 69 source and installed-wheel tests pass in nine CI environments; private TRACER bridge has 43 focused checks | Consumer acceptance before treating the interface as stable |
-| 3 — Private adapter | 242 source tests and the same 242 installed-wheel tests pass offline on Linux/Python 3.12; private import/CI/recovery handoff prepared | Internal/native/live qualification and application parity; no default switch |
+| 3 — Private adapter | Deferred at the retained offline checkpoint: 242 source and 242 installed-wheel tests on Linux/Python 3.12; private handoff prepared | Internal/native/live qualification and application parity when private work resumes; no default switch |
 | 4 — Consumer migration | Consumer requirements and boundaries identified | Prove one opt-in route, then each remaining application entry point |
-| 5 — Installation | Shared public package has cross-platform wheel checks | Novice application install/update/repair/rollback journeys |
+| 5 — Installation | Shared public package has cross-platform wheel checks; separate synthetic-provider installation, selection and removal checks implemented | Novice application install/update/repair/rollback journeys |
 | 6 — Shared review | Planned interfaces and ownership | Extract and qualify reusable behavior without a Foundry dependency |
 | 7 — CLEAR, then SCOPE | CLEAR PDF requirement retained | Build and jointly accept standalone applications |
-| 8 — Another backend | Public connector placement agreed | Select model/runtime/hardware, implement and measure it |
+| 8 — Another backend | Public connector placement agreed; two fabricated installed backend identities exercise the common selection path | Build the real connector, then select model/runtime/hardware and measure it; no real model qualified yet |
 | 9 — Foundry | Optional workflow plan recorded | Qualified shared review and consumer migration, then supervised pilot |
 | 10 — Releases | No application release or legacy retirement claimed | All release gates, migration guidance and retained rollback |
 
-## This execution checkpoint
+## Public-first checkpoint
+
+- [AI contract PR 4](https://github.com/nexus-research-software/nexus-ai/pull/4)
+  adds an optional, separately packaged synthetic provider example, an explicit
+  backend-selection command, developer instructions, and eleven installed-provider
+  checks. It preserves the core runtime and version `0.1.0.dev2`.
+- All nine CI jobs passed 69 source tests, 69 installed-wheel contract tests,
+  and 11 installed-provider checks on Linux, Windows and macOS with Python
+  3.11–3.13. Both distributions build as wheel and sdist. The
+  [CI run](https://github.com/nexus-research-software/nexus-ai/actions/runs/40110357596)
+  covers the tested head recorded in the PR; the merged tree was verified equal.
+  Public milestone P1 is complete. The merge is
+  `b9029c2e73499771be718718c3452fbc17bf6c85`, retained at
+  `checkpoint/20261024-public-p1`.
+- The public-first roadmap removes internal import/qualification from the next
+  mandatory step for unrelated public work. It retains original-source publication,
+  real-model quality, native workflow, and joint acceptance requirements.
+- Private C00/C01 and the private dependency pin remain unchanged. No internal
+  action or credential is required to use the public development example.
+
+## Retained Phase 3 checkpoint
 
 - [Organization PR 1](https://github.com/nexus-research-software/.github/pull/1)
   added the phase/status/checkpoint merge format. Documentation-only validation.
@@ -43,6 +66,17 @@ and Python 3.12 only. No actual provider request was made during this checkpoint
 
 ## Recovery and merge records
 
+The new `checkpoint/20261024-public-first-start` branches retain the starting
+revisions for this public-only increment:
+
+| Repository | Public-first recovery revision |
+| --- | --- |
+| `nexus-ai` | `0a302724d1bffd9af3daaa8e0f5f700ccd309fb1` |
+| `nexus-ecosystem` | `4e40ccb9e1aa675083ef21cf26b061197bfb87a2` |
+
+The corresponding completed milestone refs and exact tested/merged revisions
+are recorded with each PR. Preserve the earlier checkpoints below as well.
+
 Public recovery branches named `checkpoint/20261024-phase2` retain these pre-change
 revisions:
 
@@ -64,11 +98,16 @@ rollback needed at this checkpoint because the existing route is still active.
 
 ## Next execution gate
 
-Import the prepared candidate into the approved private Git service and configure
-its internal package source and runner. Run the offline checks there, then native
-and approved live synthetic qualification. Prove one opt-in application route with
-the existing quota protections and full diagnostic parity before migrating all
-consumers. Retain unqualified functionality on the original route until accepted.
+Continue public milestone P2: a separately packaged public compatible connector
+with injected transport tests and explicit configuration/qualification boundaries.
+Prepare shared content and review interfaces and synthetic PDF evidence in parallel
+where their dependencies permit. Original-source extraction awaits its publication
+decisions; actual inference awaits a chosen model/runtime and hardware.
+
+Internal import/CI, native/live private qualification, and one governed opt-in
+consumer route are deferred acceptance gates. Resume them after feasible public
+work or when a specific remaining dependency requires private evidence. Keep all
+unqualified functionality on its original route until accepted.
 
 Outstanding decisions remain application licensing/attribution, developer ownership,
 native installation combinations and joint acceptance thresholds. The first local

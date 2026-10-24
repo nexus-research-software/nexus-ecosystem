@@ -2,13 +2,14 @@
 
 Modular tools for research, technical documents, and knowledge workflows.
 
-**Status: Phase 3 private adapter qualification in progress.** The public AI contract and a separately installable private adapter candidate pass offline checks. Internal and live qualification, application migration, installers, and releases remain ahead. This catalog does not yet offer application downloads. Read the [current status and checkpoints](docs/STATUS.md).
+**Status: public work takes priority; private integration is deferred.** We are advancing the shared contracts, synthetic backend tests, public connectors, reusable components, and application/installation work that can proceed without an internal service. The private candidate remains checkpointed. This catalog does not yet offer application downloads. Read the [public-first execution order](docs/PUBLIC_FIRST.md) and [current status and checkpoints](docs/STATUS.md).
 
 ## Start here
 
 - **Using an application:** read [Getting started](docs/GETTING_STARTED.md). Keep using your existing installation during migration.
 - **Understanding the design:** read [Architecture](docs/ARCHITECTURE.md).
 - **Following development:** read the [staged roadmap](docs/ROADMAP.md) and [current status](docs/STATUS.md).
+- **Developing without a private service:** try the [separately installed synthetic backends](https://github.com/nexus-research-software/nexus-ai/blob/main/docs/PUBLIC_DEVELOPMENT.md).
 - **Establishing the baseline:** use the [baseline tools](docs/BASELINE.md) and [capability ledger](docs/CAPABILITY_LEDGER.md).
 - **Planning repository ownership:** use the [boundary-plan checker](docs/BOUNDARIES.md).
 - **Contributing:** read the [shared contribution guide](https://github.com/nexus-research-software/.github/blob/main/CONTRIBUTING.md).
