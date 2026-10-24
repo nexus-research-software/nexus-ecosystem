@@ -20,7 +20,7 @@ claims. Work can advance past a blocked item when its actual dependencies permit
 | --- | --- | --- | --- |
 | P1 — complete | `nexus-ai`: developer path with separately installed synthetic providers, explicit selection, metadata-only discovery, strict receipts and schemas | [PR 4](https://github.com/nexus-research-software/nexus-ai/pull/4): clean shared/provider wheel installs, switching and removal checks pass in all nine CI environments | Synthetic walkthrough only; no real model or private service qualified |
 | P2 — offline implementation complete | [Public compatible connector](https://github.com/nexus-research-software/nexus-provider-openai-compatible): explicit configuration, injected transport tests, errors, cancellation, deadlines, bounded attempts, scoped qualification and model identity | Installable chat connector with 67 source/installed-wheel checks and 69 shared-contract regression checks; no hidden retries or service fallback | Actual HTTP/model/runtime/hardware, task quality, capacity and application qualification remain open; the implementation currently covers non-streaming text/schema chat only |
-| P3 — P3a implemented; remaining gates open | [nexus-content](https://github.com/nexus-research-software/nexus-content) and [nexus-review](https://github.com/nexus-research-software/nexus-review): content/provenance and review/findings/proposed-change/approval contracts | P3a: 44 content and 42 review source/installed-wheel checks, exact evidence, explicit gaps, fabricated text/scanned/mixed PDFs and escaped reports | P3b OCR/rendering next; model-review adaptation, source publication/licensing, existing consumer parity and revision behavior remain open |
+| P3 — P3a/P3b implemented; remaining gates open | [nexus-content](https://github.com/nexus-research-software/nexus-content) and [nexus-review](https://github.com/nexus-research-software/nexus-review): content/provenance and review/findings/proposed-change/approval contracts | P3b: 86 content and 49 review source/installed-wheel checks; native synthetic PDFium/Tesseract recognition, exact provenance, explicit gaps and escaped reports | P3c model-review/accounting next; representative OCR quality, source publication/licensing, consumer parity and revision behavior remain open |
 | P4 | CLEAR: standalone PDF review built on the shared interfaces | A synthetic end-to-end workflow and a separately qualified real public-backend workflow; page-grounded findings, explicit incomplete coverage and reports | P3, qualified backend, joint review criteria; arbitrary PDF rewriting is outside the first release |
 | P5 | Installation and catalog: acquire, install, launch, update, repair and roll back selected applications | Novice journeys on Linux, Windows and macOS; pinned compatibility records and synthetic first-run checks | Test actual OS/CPU/package combinations; original Ecosystem Manager source publication remains gated |
 | P6 | Existing consumers and SCOPE: opt-in shared interfaces and backend selection, then SCOPE on accepted review components | Public routes retain domain behavior, evidence, saved results and approvals; SCOPE follows CLEAR acceptance | Publication decisions for extracted sources, consumer-specific parity, qualified backend; retain private/legacy routes until separately accepted |
@@ -29,11 +29,14 @@ claims. Work can advance past a blocked item when its actual dependencies permit
 
 P3 is executed in increments. **P3a** establishes new read-only PDF and review/approval
 contracts in independent packages; it does not replace the original Content/RC4
-candidate. **P3b** adds explicit rendering/OCR and validates text, scanned and mixed
-page evidence with controlled processing limits. Subsequent P3 work connects review
-to the public AI contract and qualifies reusable consumer behavior/revision results
-as source-publication decisions permit. A scanned fixture that reports missing text
-is evidence of honest coverage, not proof of successful OCR.
+candidate. **P3b** adds explicit local rendering/OCR and validates fabricated text,
+scanned and mixed-page recognition with controlled processing limits and unverified
+transcription labels. The native synthetic baseline now runs on all nine OS/Python
+combinations; it does not establish general OCR accuracy. **P3c** connects review
+to the public AI contract with usage, budget and interruption receipts. Further
+P3 work qualifies reusable consumer behavior/revision results as source-publication
+decisions permit. Text-layer-only scans still report missing text; OCR is explicit
+and never silently selected.
 
 Installation work can start alongside component development; end-to-end novice
 qualification requires a usable application. Consumer migration can proceed as

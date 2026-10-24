@@ -4,7 +4,7 @@ This is the target architecture. Public experimental packages now implement AI
 contracts, a compatible connector, read-only PDF evidence, and shared review/approval
 contracts. Original application/source extraction and consumer migration remain
 open. The [execution status](STATUS.md) distinguishes synthetic package evidence
-from native, OCR, model and application acceptance.
+from representative OCR quality, model and application acceptance.
 
 ## Logical hierarchy
 
@@ -15,7 +15,7 @@ GitHub repositories live under one organization. The hierarchy is expressed thro
 | Catalog and installation | Application discovery, compatible release records, install and repair flows | Published application and package artifacts |
 | Applications | User workflows, domain policy, settings, and product-specific outputs | Public shared-package interfaces |
 | Review package | Shared review execution, findings, change plans, and reports | Content and AI contracts where needed |
-| Content package | Read-only extraction and provenance | Format-specific parsers |
+| Content package | Read-only extraction, optional rendering/OCR and provenance | Format parsers; explicit local OCR runtime when selected |
 | AI contract | Normalized requests, results, capabilities, errors, and provider registration | No private provider implementation |
 | Provider adapters | Protocol transport and provider-specific behavior | The public AI contract |
 
@@ -36,6 +36,15 @@ Foundry or a private provider. The current review callback is deterministic in t
 example, and no AI adapter or revision execution/result implementation is claimed.
 Approval records bind exact plans and fresh source bytes; the host still owns human
 authentication, decision capture, source locking and execution authority.
+
+P3b adds optional raster/OCR execution to `nexus-content`, keeping the base package
+usable without native OCR tools. Text-only generation-one wire identities remain
+unchanged; generation-two OCR snapshots bind the base, scope, settings, runtime,
+raster and recognized text. Explicit page selection, processing limits and gaps
+prevent hidden fallback or a false complete-review claim. `nexus-review` consumes
+the same immutable snapshot boundary, labels evidence origin and rejects stale
+OCR reports/decisions. OCR runtime selection is separate from GenAI provider
+selection and does not require another application or Foundry.
 
 Prepare these interfaces in Stage 6, deliver standalone CLEAR and SCOPE in Stage 7, and pilot TRACER review/approve/revise/re-review in Stage 9. Qualify CLEAR and SCOPE integration separately after demonstrating value. Enabling or disabling Foundry must preserve existing direct review capabilities, evidence, approval rules, and saved results. Backend selection through `nexus-ai` remains independent of orchestration. See the [staged roadmap](ROADMAP.md#foundry-integration-across-stages) for acceptance gates.
 

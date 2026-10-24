@@ -2,7 +2,7 @@
 
 ## Current availability
 
-NEXUS is establishing its public repository foundations. This catalog does not yet provide application installers, package installation commands, or a qualified compatibility set.
+NEXUS is establishing its public repository foundations. This catalog does not yet provide application installers or an accepted application compatibility set; developer package walkthroughs are linked below.
 
 Developers can use the [public AI walkthrough](https://github.com/nexus-research-software/nexus-ai/blob/main/docs/PUBLIC_DEVELOPMENT.md)
 to install the shared contract and an optional synthetic adapter, then switch
@@ -47,9 +47,14 @@ Some deployments require a separately distributed private adapter and an interna
 
 CLEAR is the first planned new application. Its first release must support PDF review, including qualification for text, scanned, and mixed PDFs, page-based evidence, and review reports.
 
-P3a implements the first shared text-layer and review contracts. Scanned-only and
-mixed fixtures verify that missing/visual content is reported; OCR is not yet
-implemented or qualified. CLEAR itself is not available as an application release.
+P3a establishes shared text-layer and review contracts. P3b adds an optional
+[local OCR walkthrough](https://github.com/nexus-research-software/nexus-content/blob/main/docs/OCR.md)
+and a [fabricated OCR-to-review example](https://github.com/nexus-research-software/nexus-review/blob/main/examples/ocr_review.py).
+A fresh environment and explicitly selected Tesseract executable/language model
+are required. OCR is never silently invoked; reports distinguish native and
+recognized text, retain gaps and label OCR as unverified transcription. Synthetic
+native checks pass, while representative document accuracy and joint acceptance
+remain open. CLEAR itself is not available as an application release.
 
 PDF review does not imply arbitrary rewriting of a PDF's layout or content. Supported outputs will be stated in the release documentation.
 
