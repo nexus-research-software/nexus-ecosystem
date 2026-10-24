@@ -15,6 +15,14 @@ also includes an offline example that exercises its actual HTTP mapping through
 fabricated responses. It is separately installable and needs no private package.
 It does not yet establish compatibility or review quality with an actual model.
 
+The [PDF content walkthrough](https://github.com/nexus-research-software/nexus-content)
+and [shared review walkthrough](https://github.com/nexus-research-software/nexus-review)
+now demonstrate read-only text extraction, page evidence, a deterministic fabricated
+review rule, explicit coverage gaps, and an approval record that applies no edits.
+They need no model or private package. Use fresh isolated environments and the
+exact shared revision recorded in the review repository. The new public content
+package does not replace the original Content/RC4 package in existing applications.
+
 If you already use a NEXUS application, continue using your existing installation during migration. Moving the public repositories is not an instruction to uninstall or replace a working application.
 
 ## Planned installation experience
@@ -38,6 +46,10 @@ Some deployments require a separately distributed private adapter and an interna
 ## CLEAR and PDF
 
 CLEAR is the first planned new application. Its first release must support PDF review, including qualification for text, scanned, and mixed PDFs, page-based evidence, and review reports.
+
+P3a implements the first shared text-layer and review contracts. Scanned-only and
+mixed fixtures verify that missing/visual content is reported; OCR is not yet
+implemented or qualified. CLEAR itself is not available as an application release.
 
 PDF review does not imply arbitrary rewriting of a PDF's layout or content. Supported outputs will be stated in the release documentation.
 

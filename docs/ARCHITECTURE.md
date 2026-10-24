@@ -1,6 +1,10 @@
 # Architecture and repository boundaries
 
-This is the target architecture. The public repositories currently contain documentation foundations; the package extraction has not yet been implemented.
+This is the target architecture. Public experimental packages now implement AI
+contracts, a compatible connector, read-only PDF evidence, and shared review/approval
+contracts. Original application/source extraction and consumer migration remain
+open. The [execution status](STATUS.md) distinguishes synthetic package evidence
+from native, OCR, model and application acceptance.
 
 ## Logical hierarchy
 
@@ -24,6 +28,14 @@ Foundry retains authority over its agent workflows. An AI connector transports m
 TRACER, CLEAR, and SCOPE keep their standalone review paths. Foundry may coordinate longer workflows through the same versioned `nexus-review` interfaces used by those applications. The review package does not depend on Foundry; application-specific rules remain with each application, and orchestration remains with Foundry.
 
 Shared interfaces describe review requests, evidence-backed findings, proposed changes, human approvals, revision results, and reports. Preserve source revision identity, edit semantics, and provenance. Foundry integration must use its supported public API and qualified execution capabilities; no private runtime imports or implicit authority grants.
+
+P3a implements new generation-one source/snapshot/quote anchors in `nexus-content`
+and review requests, findings, coverage, proposed changes, approval records and
+JSON/HTML reports in `nexus-review`. Review depends on content; neither depends on
+Foundry or a private provider. The current review callback is deterministic in the
+example, and no AI adapter or revision execution/result implementation is claimed.
+Approval records bind exact plans and fresh source bytes; the host still owns human
+authentication, decision capture, source locking and execution authority.
 
 Prepare these interfaces in Stage 6, deliver standalone CLEAR and SCOPE in Stage 7, and pilot TRACER review/approve/revise/re-review in Stage 9. Qualify CLEAR and SCOPE integration separately after demonstrating value. Enabling or disabling Foundry must preserve existing direct review capabilities, evidence, approval rules, and saved results. Backend selection through `nexus-ai` remains independent of orchestration. See the [staged roadmap](ROADMAP.md#foundry-integration-across-stages) for acceptance gates.
 

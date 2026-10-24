@@ -1,8 +1,8 @@
 # Execution status — 2026-10-24
 
-**Current focus: public P3 shared content/review preparation.** Public P1 and
-P2's offline implementation are complete; actual Phase 8 model qualification
-remains open.
+**Current focus: public P3b explicit OCR/rendering.** Public P1/P2 and the P3a
+content/review contract increment are implemented. Full P3, actual Phase 8 model
+qualification and application acceptance remain open.
 The execution order now prioritizes every feasible public milestone before
 resuming internal private-repository work. Phase 3 remains at its implemented
 offline checkpoint and is not accepted for production selection. Existing
@@ -14,16 +14,51 @@ separate public/private acceptance gates.
 | Phase | Current evidence | Remaining exit condition |
 | --- | --- | --- |
 | 0 — Baselines | Canonical source identities, capability inventory and baseline evidence captured | Native/live checks and joint acceptance of remaining baseline issues |
-| 1 — Repository boundaries | Four public repositories, ownership mapping, boundary tooling, and phase/status merge template | Original-source publication/licensing decisions and internal project import |
+| 1 — Repository boundaries | Six public repositories, ownership mapping, boundary tooling, and phase/status merge template | Original-source publication/licensing decisions and internal project import |
 | 2 — AI contract | `nexus-ai 0.1.0.dev2`; 69 source and installed-wheel tests pass in nine CI environments; private TRACER bridge has 43 focused checks | Consumer acceptance before treating the interface as stable |
 | 3 — Private adapter | Deferred at the retained offline checkpoint: 242 source and 242 installed-wheel tests on Linux/Python 3.12; private handoff prepared | Internal/native/live qualification and application parity when private work resumes; no default switch |
 | 4 — Consumer migration | Consumer requirements and boundaries identified | Prove one opt-in route, then each remaining application entry point |
-| 5 — Installation | Shared public package has cross-platform wheel checks; separate synthetic-provider installation, selection and removal checks implemented | Novice application install/update/repair/rollback journeys |
-| 6 — Shared review | Planned interfaces and ownership | Extract and qualify reusable behavior without a Foundry dependency |
+| 5 — Installation | AI, compatible provider, content and review packages have cross-platform wheel checks; synthetic-provider selection/removal checks implemented | Novice application install/update/repair/rollback journeys |
+| 6 — Shared review | P3a content and review contracts implemented: exact PDF page evidence, explicit gaps, findings, bounded reports, change plans and approval records; 44 content and 42 review source/installed-wheel tests in nine environments | OCR/rendering, AI review adaptation, original-source publication and consumer/editing parity; authenticated host workflows and revision results |
 | 7 — CLEAR, then SCOPE | CLEAR PDF requirement retained | Build and jointly accept standalone applications |
 | 8 — Another backend | Public compatible chat connector implemented; 67 source/installed-wheel checks and 69 shared-contract regression checks; explicit profiles and scoped qualification | Actual HTTP/model/runtime/hardware, quality/capacity and application/native qualification; no real model qualified yet |
 | 9 — Foundry | Optional workflow plan recorded | Qualified shared review and consumer migration, then supervised pilot |
 | 10 — Releases | No application release or legacy retirement claimed | All release gates, migration guidance and retained rollback |
+
+## Public P3a content/review checkpoint
+
+- [Content PR 1](https://github.com/nexus-research-software/nexus-content/pull/1)
+  introduces `nexus-content 0.1.0.dev0`: immutable source/snapshot/page/quote
+  contracts, strict JSON, read-only PDF text-layer extraction, an interruptible
+  worker with retained page progress, explicit coverage gaps and shared fabricated
+  text/scanned/mixed fixtures. Binary checkout attributes and fixture hash checks
+  preserve the exact PDF bytes on Windows.
+- [Review PR 1](https://github.com/nexus-research-software/nexus-review/pull/1)
+  introduces `nexus-review 0.1.0.dev0`: scoped review callbacks, validated findings,
+  explicit coverage and partial results, bounded JSON/HTML reports, exact change
+  plans and explicit human-decision records. It depends on the reviewed content
+  source `e7ffc58901837f1d40b1f924480fefeb94ace8ea`; it imports no application,
+  AI provider or Foundry. The example applies a fabricated deterministic rule.
+- All nine Linux/Windows/macOS × Python 3.11/3.12/3.13 environments pass.
+  [Content CI 40118179276](https://github.com/nexus-research-software/nexus-content/actions/runs/40118179276)
+  runs 44 source and 44 clean installed-wheel tests per environment.
+  [Review CI 40118218361](https://github.com/nexus-research-software/nexus-review/actions/runs/40118218361)
+  runs 42 source and 42 clean installed-wheel tests plus 44 shared-content
+  regressions per environment. Distributions build, local static/relative-link
+  checks pass, and fabricated PDF pages were visually inspected.
+- Content merge: `e710423f1b6ca4d0dfc73eb7562118ebbe797172`.
+  Review merge: `392348ef4fde1d8800b0db2bdcb4f2eaa6668f29`.
+  Both merged trees equal their tested trees and are retained at
+  `checkpoint/20261024-public-p3a` in their respective repositories.
+- **P3a is the first P3 increment, not full P3 acceptance.** Scanned pages report
+  missing text; OCR is not implemented or qualified. Visual/layout coverage,
+  real-model review, authenticated host approval workflows, revision execution,
+  existing consumer parity and native application acceptance remain open. Approval
+  records are not authentication or execution grants, and no PDF edits are applied.
+- New public code and fabricated documents only. The original Content/RC4
+  candidate remains authoritative for existing consumers; this prototype belongs
+  in a fresh development environment. Existing application routes, saved data,
+  AI contract and private C00/C01/dependency pins remain unchanged.
 
 ## Public P2 connector checkpoint
 
@@ -89,6 +124,17 @@ and Python 3.12 only. No actual provider request was made during this checkpoint
 
 ## Recovery and merge records
 
+`checkpoint/20261024-public-p3a-start` preserves the pre-increment revisions:
+
+| Repository | P3a recovery revision |
+| --- | --- |
+| `nexus-content` | `a81d6bec789f4c6cc95fbeabcc6c1e136915ebf0` |
+| `nexus-review` | `6fa1a35d61af7392f6fd095299629d552a4d6885` |
+| `nexus-ecosystem` | `5172290b95da422ecdff421054adf3f235d97253` |
+
+Completed P3a checkpoint refs and exact tested/merged revisions are recorded in
+all three PRs. Retain the previous P1/P2 and private recovery points as well.
+
 `checkpoint/20261024-public-p2-start` retains the initial connector scaffold
 `30e190f7db83fbcf978521b39d13321caa5dd1b2` and the catalog's pre-P2 revision
 `ae22a6ff70727913653242c35724f58cd82664df` in their respective repositories.
@@ -127,11 +173,13 @@ rollback needed at this checkpoint because the existing route is still active.
 
 ## Next execution gate
 
-Continue public milestone P3: shared content/provenance and review interfaces,
-with synthetic PDF evidence and independently testable components. This prepares
-CLEAR's first PDF workflow. Original-source extraction awaits its publication
-decisions; actual inference awaits a chosen model/runtime and hardware. Neither
-blocks new provider-neutral interfaces or fabricated fixture work.
+Continue public P3b: explicit rendering/OCR with controlled processing and
+text/scanned/mixed-page evidence. Then adapt the review boundary to the public AI
+contract with complete usage, budget and interruption receipts. Original-source
+extraction and consumer/revision parity retain their publication/licensing gates;
+actual inference awaits a chosen model/runtime and hardware. These independent
+public increments prepare CLEAR's first PDF workflow without requiring internal
+access or changing existing application routes.
 
 Internal import/CI, native/live private qualification, and one governed opt-in
 consumer route are deferred acceptance gates. Resume them after feasible public
