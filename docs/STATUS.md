@@ -1,7 +1,7 @@
 # Execution status — 2026-10-24
 
-**Current focus: public P3b explicit OCR/rendering.** Public P1/P2 and the P3a
-content/review contract increment are implemented. Full P3, actual Phase 8 model
+**Current focus: public P3c AI review adaptation and accounting.** Public P1/P2
+and the P3a/P3b content/review and native OCR increments are implemented. Full P3, actual Phase 8 model
 qualification and application acceptance remain open.
 The execution order now prioritizes every feasible public milestone before
 resuming internal private-repository work. Phase 3 remains at its implemented
@@ -19,13 +19,53 @@ separate public/private acceptance gates.
 | 3 — Private adapter | Deferred at the retained offline checkpoint: 242 source and 242 installed-wheel tests on Linux/Python 3.12; private handoff prepared | Internal/native/live qualification and application parity when private work resumes; no default switch |
 | 4 — Consumer migration | Consumer requirements and boundaries identified | Prove one opt-in route, then each remaining application entry point |
 | 5 — Installation | AI, compatible provider, content and review packages have cross-platform wheel checks; synthetic-provider selection/removal checks implemented | Novice application install/update/repair/rollback journeys |
-| 6 — Shared review | P3a content and review contracts implemented: exact PDF page evidence, explicit gaps, findings, bounded reports, change plans and approval records; 44 content and 42 review source/installed-wheel tests in nine environments | OCR/rendering, AI review adaptation, original-source publication and consumer/editing parity; authenticated host workflows and revision results |
+| 6 — Shared review | P3a/P3b implemented: exact PDF evidence, optional native rendering/OCR with provenance, explicit gaps, review/approval contracts; 86 content and 49 review source/installed-wheel tests in nine environments | Representative OCR quality, AI review/accounting, original-source publication and consumer/editing parity; authenticated host workflows and revision results |
 | 7 — CLEAR, then SCOPE | CLEAR PDF requirement retained | Build and jointly accept standalone applications |
 | 8 — Another backend | Public compatible chat connector implemented; 67 source/installed-wheel checks and 69 shared-contract regression checks; explicit profiles and scoped qualification | Actual HTTP/model/runtime/hardware, quality/capacity and application/native qualification; no real model qualified yet |
 | 9 — Foundry | Optional workflow plan recorded | Qualified shared review and consumer migration, then supervised pilot |
 | 10 — Releases | No application release or legacy retirement claimed | All release gates, migration guidance and retained rollback |
 
-## Public P3a content/review checkpoint
+## Public P3b rendering/OCR checkpoint
+
+- [Content PR 2](https://github.com/nexus-research-software/nexus-content/pull/2)
+  advances `nexus-content` to `0.1.0.dev1`. Optional PDFium/Pillow rendering and
+  explicit local Tesseract 5 OCR bind exact source, base snapshot, selected pages,
+  settings, native runtime/model hashes, rasters and recognized text. Controlled
+  direct subprocesses enforce admission/output limits and interruption; completed
+  page results survive later failures. Failed requested OCR cannot silently fall
+  back to native text. Generation-one text-only JSON remains unchanged; OCR uses
+  generation two and explicitly unverified transcription.
+- [Review PR 2](https://github.com/nexus-research-software/nexus-review/pull/2)
+  advances `nexus-review` to `0.1.0.dev1`, pinned to content source
+  `b4bf978a16fb7a67b3d8628d5efd303a39d4ba9b`. Reports label native/OCR evidence and
+  expose OCR settings/limitations. Changed OCR evidence invalidates earlier
+  findings, reports, plans and approval records. A fabricated local OCR-to-review
+  example finds the pixel-only wording while retaining incomplete visual coverage.
+- [Content CI 40128706810](https://github.com/nexus-research-software/nexus-content/actions/runs/40128706810)
+  passes 86 source and 86 clean installed-wheel checks in all nine Linux/Windows/
+  macOS x Python 3.11/3.12/3.13 environments, with actual native OCR required.
+  The wheel check also verifies base-only text extraction before adding the OCR
+  extra. Native runtime versions and executable/model hashes are recorded in CI.
+- [Review CI 40128754505](https://github.com/nexus-research-software/nexus-review/actions/runs/40128754505)
+  passes 49 source and 49 clean installed-wheel checks per environment, plus 75
+  shared-content checks. Its base-only environment intentionally skips 11 optional
+  native content cases; those are required in the content matrix above. Local
+  actual OCR-to-review, wheel/sdist, static/link and visual raster checks pass.
+- Windows CI exposed a Tesseract `v5` version prefix and a local hostname query
+  used by PDFium's platform detection. The fixes retain full version provenance
+  and permit only that local query while continuing to block socket creation and
+  network operations. Regression checks precede acceptance.
+- Content merge: `4052e6e4dc865abfdcd84f816de228cec3ed61c0`.
+  Review merge: `a64a33cc44db3fc900965893afbe2f968c4b96f9`.
+  Both merged trees equal their tested trees and are retained at
+  `checkpoint/20261024-public-p3b` in their respective repositories.
+- This is an implemented native synthetic baseline, not general OCR accuracy,
+  full visual/layout/form/table coverage, real-model review or application release
+  acceptance. OCR processes are not an OS sandbox or hard memory/disk quota.
+  Existing applications, original Content/RC4, saved data, private C00/C01 and
+  private dependency pins remain unchanged. No real documents were published.
+
+## Retained public P3a content/review checkpoint
 
 - [Content PR 1](https://github.com/nexus-research-software/nexus-content/pull/1)
   introduces `nexus-content 0.1.0.dev0`: immutable source/snapshot/page/quote
@@ -50,8 +90,8 @@ separate public/private acceptance gates.
   Review merge: `392348ef4fde1d8800b0db2bdcb4f2eaa6668f29`.
   Both merged trees equal their tested trees and are retained at
   `checkpoint/20261024-public-p3a` in their respective repositories.
-- **P3a is the first P3 increment, not full P3 acceptance.** Scanned pages report
-  missing text; OCR is not implemented or qualified. Visual/layout coverage,
+- **P3a was the first P3 increment, not full P3 acceptance.** At that checkpoint,
+  scanned pages reported missing text; OCR had not yet been implemented. Visual/layout coverage,
   real-model review, authenticated host approval workflows, revision execution,
   existing consumer parity and native application acceptance remain open. Approval
   records are not authentication or execution grants, and no PDF edits are applied.
@@ -124,6 +164,17 @@ and Python 3.12 only. No actual provider request was made during this checkpoint
 
 ## Recovery and merge records
 
+`checkpoint/20261024-public-p3b-start` preserves the pre-P3b revisions:
+
+| Repository | P3b recovery revision |
+| --- | --- |
+| `nexus-content` | `e710423f1b6ca4d0dfc73eb7562118ebbe797172` |
+| `nexus-review` | `392348ef4fde1d8800b0db2bdcb4f2eaa6668f29` |
+| `nexus-ecosystem` | `d9bd2480270a5130e4c04202fab0c842258be5bb` |
+
+Completed P3b checkpoint refs and tested/merged revisions are recorded in all
+three PRs. Retain P3a and earlier public/private recovery points.
+
 `checkpoint/20261024-public-p3a-start` preserves the pre-increment revisions:
 
 | Repository | P3a recovery revision |
@@ -173,9 +224,10 @@ rollback needed at this checkpoint because the existing route is still active.
 
 ## Next execution gate
 
-Continue public P3b: explicit rendering/OCR with controlled processing and
-text/scanned/mixed-page evidence. Then adapt the review boundary to the public AI
-contract with complete usage, budget and interruption receipts. Original-source
+Continue public P3c: adapt the review boundary to the public AI contract with
+complete usage, budget and interruption receipts. Keep explicit native/OCR origins
+and incomplete coverage through the model boundary; use fabricated responses for
+contract checks while actual-model quality remains a separate gate. Original-source
 extraction and consumer/revision parity retain their publication/licensing gates;
 actual inference awaits a chosen model/runtime and hardware. These independent
 public increments prepare CLEAR's first PDF workflow without requiring internal
